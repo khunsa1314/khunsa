@@ -3,34 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>坤沙紀念館</title>
-  <meta name="description" content="坤沙紀念館（滿星疊）園區網站：參觀資訊、十二景探索、壁畫解說。">
+  <title>昆沙紀念館</title>
+  <meta name="description" content="昆沙紀念館（滿星疊）園區網站：參觀資訊、十二景探索、壁畫解說。">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-title="siteName">
   <main id="main">
     <section class="hero" aria-label="hero">
-      <div class="slides" id="slides">
-        <article class="slide is-on">
-          <div class="wrap">
-            <h1 data-i18n="slide1Title">滿星疊園區十二景</h1>
-            <p data-i18n="slide1Text">依當年蒙傣軍營地格局保留房舍與遺跡。入口銅像、土牢、炸彈殘骸、導覽室與壁畫，是目前可以靠近觀看的據點。</p>
-          </div>
-        </article>
-        <article class="slide">
-          <div class="wrap">
-            <h1 data-i18n="slide2Title">向這片營地學習</h1>
-            <p data-i18n="slide2Text">客房、餐廳、臥室與會客室多半暫不開放內覽。請先走開放路線，並以現場人員指引為準。</p>
-          </div>
-        </article>
-        <article class="slide">
-          <div class="wrap">
-            <h1 data-i18n="slide3Title">壁畫裡的民族、軍隊與國家</h1>
-            <p data-i18n="slide3Text">牆面上的傣族服飾、軍旗與撣邦共和國國旗，把滿星疊曾經想像過的身份寫在牆上。</p>
-          </div>
-        </article>
-      </div>
-      <div class="hero-dots" id="hero-dots"></div>
+      <h1 class="sr" data-i18n="siteName">昆沙紀念館</h1>
+      <img class="hero-photo" src="images/hero.jpg" width="1600" height="700" data-i18n-alt="heroAlt" alt="昆沙紀念館：騎馬銅像、坐像、房舍模型，以及滿星疊村歡迎布條">
     </section>
 
     <div class="wrap">
@@ -43,16 +24,79 @@
       </nav>
     </div>
 
+    <section class="wrap section" id="halls">
+      <h2 data-i18n="hallsTitle">館藏展廳</h2>
+      <div class="halls">
+        <article class="hall hall-feature">
+          <a href="spot.html?id=1"><img src="images/photos/18.jpg" alt="" data-i18n-alt="hall1Title"></a>
+          <div class="hall-body">
+            <h3 data-i18n="hall1Title">騎馬青銅雕像</h3>
+            <p data-i18n="hall1Text">園區入口最醒目的地標。村民於昆沙先生過世後鑄成馬上英姿，還原他在金三角山區策馬的樣貌。</p>
+            <a class="more" href="spot.html?id=1" data-i18n="readMore">閱讀全文</a>
+          </div>
+        </article>
+        <article class="hall">
+          <a href="about.html"><img src="images/photos/16.jpg" alt="" data-i18n-alt="hall2Title"></a>
+          <div class="hall-body">
+            <h3 data-i18n="hall2Title">坐像</h3>
+            <p data-i18n="hall2Text">館內坐像呈現日常起居的樸實儀態，與外界對武裝領袖居所的刻板印象不同。</p>
+            <a class="more" href="about.html" data-i18n="readMore">閱讀全文</a>
+          </div>
+        </article>
+        <article class="hall hall-painting">
+          <a href="spot.html?id=12"><img src="images/photos/15.jpg" alt="" data-i18n-alt="hall3Title"></a>
+          <div class="hall-body">
+            <h3 data-i18n="hall3Title">騎馬畫像</h3>
+            <p data-i18n="hall3Text">館藏油畫描繪昆沙策馬形象，是紀念館內重要的視覺史料。</p>
+            <a class="more" href="spot.html?id=12" data-i18n="readMore">閱讀全文</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="wrap section bio" id="bio">
+      <figure class="bio-main">
+        <img src="images/photos/17.jpg" alt="" data-i18n-alt="bioHorseAlt">
+      </figure>
+      <div class="bio-copy">
+        <h2 data-i18n="bioTitle">昆沙先生</h2>
+        <p data-i18n="bioText">蒙傣軍領袖。滿星疊大本營留下營地、銅像與影像。本館依現場導覽整理其生平，以及十二處據點的開放情形。</p>
+        <p><a class="more" href="about.html" data-i18n="navHistory">歷史沿革</a></p>
+      </div>
+      <figure class="bio-side">
+        <img src="images/photos/13.jpg" alt="" data-i18n-alt="bioTitle">
+      </figure>
+    </section>
+
     <section class="wrap section" id="news">
       <h2 data-i18n="newsTitle">園內情報</h2>
       <div class="news-grid">
         <article class="news-feature">
-          <p class="meta" style="color:#666;margin:0 0 8px" data-i18n="newsFeatureKicker">園區地標</p>
-          <h3><a href="spot.html?id=1" data-i18n="newsFeatureTitle">入口最醒目的地標：坤沙騎馬青銅雕像</a></h3>
-          <p data-i18n="newsFeatureText">2007年坤沙先生過世後，村民延請木姐、南坎工匠鑄成馬上英姿與坐像，幾乎每位遊客都會在此拍照，卻很少人追問雕像背後那份擁戴。</p>
-          <p><a href="spot.html?id=1" data-i18n="readMore">閱讀全文</a></p>
+          <img class="news-photo" src="images/photos/01.jpg" alt="" data-i18n-alt="newsFeatureTitle">
+          <p class="meta" style="color:#666;margin:12px 0 8px" data-i18n="newsFeatureKicker">歷史影像</p>
+          <h3><a href="about.html" data-i18n="newsFeatureTitle">蒙傣軍大本營的閱兵隊列</a></h3>
+          <p data-i18n="newsFeatureText">滿星疊營地曾是蒙傣軍駐紮與整訓之地。這張隊列照片留下官兵列隊、山林為幕的現場尺度，也說明今日紀念館何以沿著舊日營區動線開放參觀。</p>
+          <p><a href="about.html" data-i18n="readMore">閱讀全文</a></p>
         </article>
         <div class="news-list" id="news-list"></div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="photos">
+      <h2 data-i18n="archiveTitle">歷史影像</h2>
+      <div class="archive" id="photo-grid">
+        <figure class="wide"><img src="images/photos/04.jpg" alt=""></figure>
+        <figure class="tall"><img src="images/photos/05.jpg" alt=""></figure>
+        <figure class="tall"><img src="images/photos/06.jpg" alt=""></figure>
+        <figure class="wide"><img src="images/photos/11.jpg" alt=""></figure>
+        <figure class="wide"><img src="images/photos/09.jpg" alt=""></figure>
+        <figure><img src="images/photos/03.jpg" alt=""></figure>
+        <figure><img src="images/photos/02.jpg" alt=""></figure>
+        <figure class="tall"><img src="images/photos/08.jpg" alt=""></figure>
+        <figure class="wide"><img src="images/photos/12.jpg" alt=""></figure>
+        <figure><img src="images/photos/07.jpg" alt=""></figure>
+        <figure class="wide"><img src="images/photos/14.jpg" alt=""></figure>
+        <figure><img src="images/photos/10.jpg" alt=""></figure>
       </div>
     </section>
 

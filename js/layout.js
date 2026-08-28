@@ -100,7 +100,7 @@
       <header class="masthead">
         <div class="wrap masthead-inner">
           <a class="logo" href="index.html">
-            <span class="mark" aria-hidden="true">坤</span>
+            <span class="mark" aria-hidden="true">昆</span>
             <span>
               <strong>${t("siteName")}</strong>
               <em>${t("sitePlace")}</em>

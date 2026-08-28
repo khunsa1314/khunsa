@@ -28,9 +28,18 @@
   `;
 
   const body = spot.body.map((p) => `<p>${p}</p>`).join("");
+  const photos = {
+    1: { src: "images/photos/18.jpg", cls: "portrait" },
+    7: { src: "images/photos/08.jpg", cls: "portrait" },
+    12: { src: "images/photos/15.jpg", cls: "painting" }
+  };
+  const lead = photos[spot.id]
+    ? `<figure class="spot-photo ${photos[spot.id].cls}"><img src="${photos[spot.id].src}" alt="${spot.name}"></figure>`
+    : "";
   document.getElementById("article").innerHTML = `
     <h1>${spot.name}</h1>
     <p class="meta">${spot.subtitle}　｜　${spot.location}　｜　${spot.statusLabel}</p>
+    ${lead}
     ${body}
     ${spot.mural ? muralHtml() : ""}
     <p class="note">${t("statusNote")}</p>
