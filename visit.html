@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>參觀資訊｜坤沙紀念館</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-title="visitTitle">
+  <main id="main" class="page">
+    <div class="wrap crumb"><a href="index.html" data-i18n="crumbHome">首頁</a> ＞ <span data-i18n="visitTitle">參觀資訊</span></div>
+    <div class="wrap prose">
+      <h1 class="page-title" data-i18n="visitTitle">參觀資訊</h1>
+      <h2 id="status" data-i18n="visitStatusH">開放狀態</h2>
+      <p data-i18n="visitStatusP">園區十二處據點並非全部開放內覽。目前可靠近觀看的是戶外地標、遺跡與導覽室；多數舊時內室僅能從外側辨認位置。</p>
+      <p id="open"><strong data-i18n="visitOpenLead">可參觀：</strong> <span id="open-names"></span></p>
+      <p id="closed"><strong data-i18n="visitClosedLead">暫不開放：</strong> <span id="closed-names"></span></p>
+      <h2 id="route" data-i18n="visitRouteH">建議行程</h2>
+      <p data-i18n="visitRouteP">若時間有限，建議走半日開放路線：</p>
+      <p id="route-line"></p>
+      <p data-i18n="visitRouteMap">完整十二景編號與相對位置，請見園區地圖。</p>
+      <h2 id="rules" data-i18n="visitRulesH">遊園須知</h2>
+      <ul>
+        <li data-i18n="visitR1">暫不開放的房舍請勿擅自進入，尊重現場管理。</li>
+        <li data-i18n="visitR2">土牢陰暗潮濕，靠近時請注意步履與光線。</li>
+        <li data-i18n="visitR3">銅像為村民集資鑄造的紀念物，拍照時請勿攀爬。</li>
+        <li data-i18n="visitR4">導覽室為解說主要空間，陳列老照片與史料，請依人員引導瀏覽。</li>
+        <li data-i18n="visitR5">開放狀態以館方當日公告為準。</li>
+      </ul>
+    </div>
+  </main>
+  <script src="js/spots.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/i18n-spots.js"></script>
+  <script src="js/layout.js"></script>
+  <script>
+    KHUNSA.renderChrome();
+    const spots = KHUNSA.getSpots();
+    const sep = { zh: "、", th: " ", my: "၊ ", en: ", " }[KHUNSA_I18N.getLang()] || ", ";
+    document.getElementById("open-names").textContent = spots.filter((s) => s.status === "open").map((s) => s.name).join(sep);
+    document.getElementById("closed-names").textContent = spots.filter((s) => s.status === "closed").map((s) => s.name).join(sep);
+    const open = [1, 2, 6, 7, 12].map((id) => spots.find((s) => s.id === id)).filter(Boolean);
+    document.getElementById("route-line").innerHTML = open.map((s) => `<a href="spot.html?id=${s.id}">${s.name}</a>`).join(" → ");
+  </script>
+</body>
+</html>

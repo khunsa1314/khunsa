@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>網站導覽｜坤沙紀念館</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-title="sitemapTitle">
+  <main id="main" class="page">
+    <div class="wrap crumb"><a href="index.html" data-i18n="crumbHome">首頁</a> ＞ <span data-i18n="sitemapTitle">網站導覽</span></div>
+    <div class="wrap prose">
+      <h1 class="page-title" data-i18n="sitemapTitle">網站導覽</h1>
+      <p data-i18n="sitemapHint">本網站快速鍵：Alt+U 上方選單、Alt+C 主要內容。</p>
+      <h2 data-i18n="sitemap1">1. 首頁</h2>
+      <ul>
+        <li><a href="index.html" data-i18n="sitemapHome">坤沙紀念館首頁</a></li>
+        <li><a href="index.html#news" data-i18n="newsTitle">園內情報</a></li>
+        <li><a href="index.html#explore" data-i18n="exploreTitle">園區探索</a></li>
+      </ul>
+      <h2 data-i18n="sitemap2">2. 參觀資訊</h2>
+      <ul>
+        <li><a href="visit.html" data-i18n="sitemapVisit">開放狀態、建議行程、遊園須知</a></li>
+        <li><a href="map.html" data-i18n="mapTitle">園區地圖</a></li>
+      </ul>
+      <h2 data-i18n="sitemap3">3. 園區介紹</h2>
+      <ul>
+        <li><a href="about.html" data-i18n="navHistory">歷史沿革</a></li>
+        <li><a href="spot.html?id=12" data-i18n="navMural">壁畫解說</a></li>
+      </ul>
+      <h2 data-i18n="sitemap4">4. 園區探索（十二景）</h2>
+      <ul id="spot-index"></ul>
+    </div>
+  </main>
+  <script src="js/spots.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/i18n-spots.js"></script>
+  <script src="js/layout.js"></script>
+  <script>
+    KHUNSA.renderChrome();
+    document.getElementById("spot-index").innerHTML = KHUNSA.getSpots().map((s) =>
+      `<li><a href="spot.html?id=${s.id}">${String(s.id).padStart(2, "0")} ${s.name}</a>　${s.statusLabel}</li>`
+    ).join("");
+  </script>
+</body>
+</html>

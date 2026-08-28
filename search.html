@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>搜尋｜坤沙紀念館</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-title="searchTitle">
+  <main id="main" class="page">
+    <div class="wrap crumb"><a href="index.html" data-i18n="crumbHome">首頁</a> ＞ <span data-i18n="search">搜尋</span></div>
+    <div class="wrap prose">
+      <h1 class="page-title" data-i18n="searchTitle">搜尋結果</h1>
+      <div id="results"></div>
+    </div>
+  </main>
+  <script src="js/spots.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/i18n-spots.js"></script>
+  <script src="js/layout.js"></script>
+  <script>
+    KHUNSA.renderChrome();
+    const t = KHUNSA_I18N.t;
+    const format = KHUNSA_I18N.format;
+    const q = (new URLSearchParams(location.search).get("q") || "").trim();
+    const box = document.getElementById("results");
+    if (!q) {
+      box.innerHTML = "<p>" + t("searchEmpty") + "</p>";
+    } else {
+      const found = KHUNSA.getSpots().filter((s) =>
+        [s.name, s.subtitle, s.location, s.summary, ...(s.body || [])].join(" ").toLowerCase().includes(q.toLowerCase())
+      );
+      box.innerHTML = found.length
+        ? "<p>" + format(t("searchCount"), { q: q, n: found.length }) + "</p>" + found.map((s) =>
+            `<p><a href="spot.html?id=${s.id}">${s.name}</a>　${s.statusLabel}<br>${s.summary}</p>`
+          ).join("")
+        : "<p>" + format(t("searchNone"), { q: q }) + "</p>";
+    }
+  </script>
+</body>
+</html>

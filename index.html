@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>坤沙紀念館</title>
+  <meta name="description" content="坤沙紀念館（滿星疊）園區網站：參觀資訊、十二景探索、壁畫解說。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-title="siteName">
+  <main id="main">
+    <section class="hero" aria-label="hero">
+      <div class="slides" id="slides">
+        <article class="slide is-on">
+          <div class="wrap">
+            <h1 data-i18n="slide1Title">滿星疊園區十二景</h1>
+            <p data-i18n="slide1Text">依當年蒙傣軍營地格局保留房舍與遺跡。入口銅像、土牢、炸彈殘骸、導覽室與壁畫，是目前可以靠近觀看的據點。</p>
+          </div>
+        </article>
+        <article class="slide">
+          <div class="wrap">
+            <h1 data-i18n="slide2Title">向這片營地學習</h1>
+            <p data-i18n="slide2Text">客房、餐廳、臥室與會客室多半暫不開放內覽。請先走開放路線，並以現場人員指引為準。</p>
+          </div>
+        </article>
+        <article class="slide">
+          <div class="wrap">
+            <h1 data-i18n="slide3Title">壁畫裡的民族、軍隊與國家</h1>
+            <p data-i18n="slide3Text">牆面上的傣族服飾、軍旗與撣邦共和國國旗，把滿星疊曾經想像過的身份寫在牆上。</p>
+          </div>
+        </article>
+      </div>
+      <div class="hero-dots" id="hero-dots"></div>
+    </section>
+
+    <div class="wrap">
+      <nav class="shortcuts">
+        <a class="shortcut" href="visit.html#status"><i>開</i><span data-i18n="scStatus">開放狀態</span></a>
+        <a class="shortcut" href="visit.html#route"><i>行</i><span data-i18n="scRoute">建議行程</span></a>
+        <a class="shortcut" href="map.html"><i>圖</i><span data-i18n="scMap">園區地圖</span></a>
+        <a class="shortcut" href="#news"><i>訊</i><span data-i18n="scNews">最新消息</span></a>
+        <a class="shortcut" href="spot.html?id=12"><i>畫</i><span data-i18n="scMural">壁畫解說</span></a>
+      </nav>
+    </div>
+
+    <section class="wrap section" id="news">
+      <h2 data-i18n="newsTitle">園內情報</h2>
+      <div class="news-grid">
+        <article class="news-feature">
+          <p class="meta" style="color:#666;margin:0 0 8px" data-i18n="newsFeatureKicker">園區地標</p>
+          <h3><a href="spot.html?id=1" data-i18n="newsFeatureTitle">入口最醒目的地標：坤沙騎馬青銅雕像</a></h3>
+          <p data-i18n="newsFeatureText">2007年坤沙先生過世後，村民延請木姐、南坎工匠鑄成馬上英姿與坐像，幾乎每位遊客都會在此拍照，卻很少人追問雕像背後那份擁戴。</p>
+          <p><a href="spot.html?id=1" data-i18n="readMore">閱讀全文</a></p>
+        </article>
+        <div class="news-list" id="news-list"></div>
+      </div>
+    </section>
+
+    <section class="wrap section">
+      <div class="two-col">
+        <div class="side-box">
+          <h2 data-i18n="newsUpdates">園區動態</h2>
+          <ul>
+            <li><a href="visit.html#open" data-i18n="newsU1">目前可參觀五處：銅像、土牢、炸彈殘骸、導覽室、壁畫</a></li>
+            <li><a href="visit.html#closed" data-i18n="newsU2">客房、餐廳、宿舍、副官住所、會客室、臥室、禪房暫不內覽</a></li>
+            <li><a href="spot.html?id=7" data-i18n="newsU3">少年兵宿舍已改作導覽室，陳列老照片與史料</a></li>
+          </ul>
+        </div>
+        <div class="side-box">
+          <h2 data-i18n="recTitle">建議行程</h2>
+          <ul>
+            <li><a href="visit.html#route" data-i18n="rec1">半日開放路線：銅像 → 土牢 → 炸彈殘骸 → 導覽室 → 壁畫</a></li>
+            <li><a href="map.html" data-i18n="rec2">十二景編號地圖</a></li>
+            <li><a href="visit.html#rules" data-i18n="rec3">遊園須知：不進入暫不開放房舍</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="wrap section" id="explore">
+      <h2 data-i18n="exploreTitle">園區探索</h2>
+      <div class="explore" id="explore-grid"></div>
+    </section>
+  </main>
+
+  <script src="js/spots.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/i18n-spots.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>
