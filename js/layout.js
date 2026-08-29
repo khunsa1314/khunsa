@@ -112,7 +112,8 @@
           <div>
             <p class="brand">${t("siteName")}<em>${t("siteEn")}</em></p>
             <p>${t("footerAddress")}</p>
-            <p><a href="tel:+66821292305">${t("visitHoursTel")} 082-129-2305</a></p>
+            <p>${t("visitHoursManager")} <a href="tel:+66821292305">082-129-2305</a> ${t("visitHoursManagerLang")}</p>
+            <p>${t("visitHoursService")} <a href="tel:+66988079227">098-807-9227</a></p>
             <p>${t("footerDisclaimer")}</p>
           </div>
           <div>
