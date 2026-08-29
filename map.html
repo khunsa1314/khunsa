@@ -4,28 +4,50 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>園區地圖｜昆沙紀念館</title>
+  <meta name="description" content="昆沙紀念館園區地圖：十二處據點編號、可參觀與暫不開放資訊。">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-title="mapTitle">
   <main id="main" class="page">
-    <div class="wrap crumb"><a href="index.html" data-i18n="crumbHome">首頁</a> ＞ <a href="visit.html" data-i18n="navVisit">參觀資訊</a> ＞ <span data-i18n="mapTitle">園區地圖</span></div>
     <div class="wrap">
-      <h1 class="page-title" data-i18n="mapTitle">園區地圖</h1>
-      <p data-i18n="mapP">自入口銅像起，依編號走完十二處。綠色編號為目前可參觀，灰色為暫不開放內覽。</p>
-      <div class="map-board" id="map-board"></div>
-      <p class="note" data-i18n="mapNote">土牢在騎馬雕像左方山坡。完整解說請點選編號進入各據點內頁。</p>
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="index.html" data-i18n="crumbHome">首頁</a> / <a href="visit.html" data-i18n="navVisit">參觀資訊</a> / <span data-i18n="mapTitle">園區地圖</span>
+      </nav>
+      <header class="page-hero">
+        <p class="kicker" data-i18n="mapKicker">MAP</p>
+        <h1 class="page-title" data-i18n="mapTitle">園區地圖</h1>
+        <p class="measure" data-i18n="mapP">本網站依目前園區現有建築、歷史遺跡及展示內容，整理為十二處主要導覽據點。自入口銅像起，可依編號認識各處。</p>
+      </header>
+      <p class="park-map-note" data-i18n="mapSchematic">園區導覽示意圖｜非按比例繪製</p>
+      <p class="park-map-note" data-i18n="mapRouteHint">虛線為建議參觀順序（銅像→土牢→炸彈殘骸→童軍駐房間→壁畫），非實際道路。</p>
+      <div class="park-map-wrap" id="park-map"></div>
+      <div class="map-layout">
+        <div>
+          <h2 data-i18n="mapSpotsH">園區導覽據點</h2>
+          <div class="park-spots" id="map-board"></div>
+          <p class="note" data-i18n="mapNote">土牢在騎馬雕像左方山坡。完整解說請點選編號進入各據點內頁。</p>
+        </div>
+        <figure class="map-qr">
+          <img src="images/qr-map.svg" alt="" data-i18n-alt="mapQrAlt">
+          <figcaption data-i18n="mapQrCap">掃描即可開啟園區地圖。</figcaption>
+        </figure>
+      </div>
     </div>
   </main>
   <script src="js/spots.js"></script>
   <script src="js/i18n.js"></script>
   <script src="js/i18n-spots.js"></script>
   <script src="js/layout.js"></script>
+  <script src="js/park-map.js"></script>
   <script>
     KHUNSA.renderChrome();
+    KHUNSA_PARK_MAP.render(document.getElementById("park-map"));
     document.getElementById("map-board").innerHTML = KHUNSA.getSpots().map((s) => `
-      <a class="map-node ${s.status}" href="spot.html?id=${s.id}">
+      <a href="spot.html?id=${s.id}">
         <b>${String(s.id).padStart(2, "0")}</b>
-        ${s.name}
+        <span>${s.name}</span>
+        <small><span class="dot${s.status === "open" ? "" : " off"}" aria-hidden="true"></span>${s.statusLabel}</small>
+        <em>${KHUNSA_I18N.t("mapSee")} →</em>
       </a>
     `).join("");
   </script>

@@ -4,14 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>搜尋｜昆沙紀念館</title>
+  <meta name="description" content="搜尋昆沙紀念館園區據點與解說。">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-title="searchTitle">
   <main id="main" class="page">
-    <div class="wrap crumb"><a href="index.html" data-i18n="crumbHome">首頁</a> ＞ <span data-i18n="search">搜尋</span></div>
-    <div class="wrap prose">
-      <h1 class="page-title" data-i18n="searchTitle">搜尋結果</h1>
-      <div id="results"></div>
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="index.html" data-i18n="crumbHome">首頁</a> / <span data-i18n="search">搜尋</span>
+      </nav>
+      <header class="page-hero">
+        <h1 class="page-title" data-i18n="searchTitle">搜尋結果</h1>
+      </header>
+      <div class="prose" id="results"></div>
     </div>
   </main>
   <script src="js/spots.js"></script>
@@ -32,7 +37,7 @@
       );
       box.innerHTML = found.length
         ? "<p>" + format(t("searchCount"), { q: q, n: found.length }) + "</p>" + found.map((s) =>
-            `<p><a href="spot.html?id=${s.id}">${s.name}</a>　${s.statusLabel}<br>${s.summary}</p>`
+            `<article class="search-hit"><a href="spot.html?id=${s.id}">${s.name}</a><br><small>${s.statusLabel}</small><p>${s.summary}</p></article>`
           ).join("")
         : "<p>" + format(t("searchNone"), { q: q }) + "</p>";
     }

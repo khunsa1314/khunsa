@@ -11,7 +11,7 @@
   const area = outdoorIds.includes(spot.id) ? t("crumbOutdoor") : t("crumbIndoor");
 
   document.getElementById("crumb").innerHTML =
-    `<a href="index.html">${t("crumbHome")}</a> ＞ <a href="about.html">${t("navAbout")}</a> ＞ <a href="index.html#explore">${area}</a> ＞ ${spot.name}`;
+    `<a href="index.html">${t("crumbHome")}</a> / <a href="about.html">${t("navAbout")}</a> / <a href="index.html#explore">${area}</a> / ${spot.name}`;
 
   const sideOpen = spots.filter((s) => s.status === "open");
   const sideClosed = spots.filter((s) => s.status === "closed");
@@ -29,12 +29,33 @@
 
   const body = spot.body.map((p) => `<p>${p}</p>`).join("");
   const photos = {
-    1: { src: "images/photos/18.jpg", cls: "portrait" },
-    7: { src: "images/photos/08.jpg", cls: "portrait" },
-    12: { src: "images/photos/15.jpg", cls: "painting" }
+    1: [{ src: "images/photos/18.jpg", cls: "portrait" }],
+    2: [
+      { src: "images/photos/spot-02-cave-a.jpg", cls: "" },
+      { src: "images/photos/spot-02-cave-b.jpg", cls: "" }
+    ],
+    3: [{ src: "images/photos/spot-03.jpg", cls: "" }],
+    4: [{ src: "images/photos/spot-04.jpg", cls: "" }],
+    5: [{ src: "images/photos/spot-05.jpg", cls: "" }],
+    6: [{ src: "images/photos/spot-06.jpg", cls: "" }],
+    7: [
+      { src: "images/photos/spot-07-board.jpg", cls: "" }
+    ],
+    8: [{ src: "images/photos/spot-08.jpg", cls: "" }],
+    9: [{ src: "images/photos/spot-09.jpg", cls: "" }],
+    10: [
+      { src: "images/photos/spot-10-door.jpg", cls: "" },
+      { src: "images/photos/spot-10-in.jpg", cls: "" }
+    ],
+    11: [{ src: "images/photos/spot-11.jpg", cls: "" }],
+    12: [{ src: "images/photos/spot-12.jpg", cls: "" }]
   };
-  const lead = photos[spot.id]
-    ? `<figure class="spot-photo ${photos[spot.id].cls}"><img src="${photos[spot.id].src}" alt="${spot.name}"></figure>`
+  const shots = photos[spot.id] || [];
+  const gallery = shots.length > 1 ? "spot-gallery" : "";
+  const lead = shots.length
+    ? `<div class="${gallery}">${shots.map((p) =>
+        `<figure class="spot-photo ${p.cls}"><img src="${p.src}" alt="${spot.name}" loading="lazy"></figure>`
+      ).join("")}</div>`
     : "";
   document.getElementById("article").innerHTML = `
     <h1>${spot.name}</h1>

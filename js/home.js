@@ -1,5 +1,5 @@
 (function () {
-  const { renderChrome, icon, getSpots } = window.KHUNSA;
+  const { renderChrome, getSpots } = window.KHUNSA;
   const { t } = window.KHUNSA_I18N;
   renderChrome();
 
@@ -7,42 +7,60 @@
   const news = t("newsItems") || [];
   const spotPhoto = {
     1: "images/photos/18.jpg",
-    7: "images/photos/08.jpg",
-    12: "images/photos/15.jpg"
+    2: "images/photos/spot-02-cave-a.jpg",
+    3: "images/photos/spot-03.jpg",
+    4: "images/photos/spot-04.jpg",
+    5: "images/photos/spot-05.jpg",
+    6: "images/photos/spot-06.jpg",
+    7: "images/photos/spot-07-board.jpg",
+    8: "images/photos/spot-08.jpg",
+    9: "images/photos/spot-09.jpg",
+    10: "images/photos/spot-10-door.jpg",
+    11: "images/photos/spot-11.jpg",
+    12: "images/photos/spot-12.jpg"
   };
 
   const slides = [
     "images/hero.jpg",
+    "images/photos/memorial-hall.jpg",
+    "images/photos/spot-09.jpg",
     "images/photos/18.jpg",
-    "images/photos/16.jpg",
-    "images/photos/15.jpg",
-    "images/photos/01.jpg",
-    "images/photos/17.jpg",
-    "images/photos/14.jpg",
-    "images/photos/11.jpg",
-    "images/photos/04.jpg",
-    "images/photos/08.jpg",
-    "images/photos/13.jpg",
-    "images/photos/10.jpg"
+    "images/photos/spot-02-cave-a.jpg",
+    "images/photos/spot-06.jpg",
+    "images/photos/spot-10-door.jpg",
+    "images/photos/spot-07-board.jpg",
+    "images/photos/spot-03.jpg",
+    "images/photos/spot-05.jpg",
+    "images/photos/spot-11.jpg",
+    "images/photos/15.jpg"
   ];
 
   const track = document.getElementById("stage-track");
   const pauseBtn = document.getElementById("stage-pause");
+  const ind = document.getElementById("stage-ind");
   let index = 0;
   let playing = true;
   let timer = 0;
 
+  const icoPause = '<svg viewBox="0 0 16 16" aria-hidden="true"><rect x="4" y="3" width="2.2" height="10" fill="currentColor"/><rect x="9.8" y="3" width="2.2" height="10" fill="currentColor"/></svg>';
+  const icoPlay = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M5 3.5v9l8-4.5z" fill="currentColor"/></svg>';
+
+  function pad(n) {
+    return String(n).padStart(2, "0");
+  }
+
   if (track) {
     const alt = t("heroAlt");
     track.innerHTML = slides.map((src, i) =>
-      `<figure class="stage-slide${i === 0 ? " is-on" : ""}"><img src="${src}" alt="${alt}"></figure>`
+      `<figure class="hero-slide${i === 0 ? " is-on" : ""}"><img src="${src}" alt="${alt}"${i === 0 ? "" : ' loading="lazy"'}></figure>`
     ).join("");
 
     function show(n) {
       index = (n + slides.length) % slides.length;
-      track.querySelectorAll(".stage-slide").forEach((el, i) => {
+      track.querySelectorAll(".hero-slide").forEach((el, i) => {
         el.classList.toggle("is-on", i === index);
       });
+      if (ind) ind.textContent = pad(index + 1) + " / " + pad(slides.length);
     }
     function tick() {
       if (playing) show(index + 1);
@@ -50,7 +68,7 @@
     function start() {
       if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
         playing = false;
-        pauseBtn.textContent = "▶";
+        pauseBtn.innerHTML = icoPlay;
         pauseBtn.setAttribute("aria-pressed", "true");
         pauseBtn.setAttribute("aria-label", t("playLabel"));
         return;
@@ -66,78 +84,62 @@
       show(index + 1);
       if (playing) start();
     });
+    pauseBtn.innerHTML = icoPause;
     pauseBtn.setAttribute("aria-label", t("pauseLabel"));
     document.getElementById("stage-prev").setAttribute("aria-label", t("prevLabel"));
     document.getElementById("stage-next").setAttribute("aria-label", t("nextLabel"));
     pauseBtn.addEventListener("click", () => {
       playing = !playing;
       pauseBtn.setAttribute("aria-pressed", String(!playing));
-      pauseBtn.textContent = playing ? "❚❚" : "▶";
+      pauseBtn.innerHTML = playing ? icoPause : icoPlay;
       pauseBtn.setAttribute("aria-label", playing ? t("pauseLabel") : t("playLabel"));
       if (playing) start();
       else clearInterval(timer);
     });
+    show(0);
     start();
   }
 
-  const orbit = document.getElementById("orbit-map");
-  if (orbit) {
-    const items = spots.map((s, i) => {
-      const a = (i / spots.length) * Math.PI * 2 - Math.PI / 2;
-      const x = 50 + 44 * Math.cos(a);
-      const y = 50 + 42 * Math.sin(a);
-      return `<a class="orbit-node ${s.status}" href="spot.html?id=${s.id}" style="left:${x}%;top:${y}%">
-        <span class="orbit-ico">${icon(s.icon)}</span>
-        <span>${String(s.id).padStart(2, "0")} ${s.name}</span>
-      </a>`;
-    }).join("");
-    orbit.innerHTML = `
-      <a class="orbit-core" href="spot.html?id=1">
-        <img src="images/photos/16.jpg" alt="${t("hall2Title")}">
-      </a>
-      ${items}`;
+  const virt = document.getElementById("virt-lines");
+  if (virt) {
+    virt.innerHTML = spots.map((s) =>
+      `<li><a href="spot.html?id=${s.id}"><span>${pad(s.id)}</span>${s.name}</a></li>`
+    ).join("");
   }
 
   const scenes = document.getElementById("scene-grid");
   if (scenes) {
-    const cards = [
-      { id: 1, img: "images/photos/18.jpg" },
-      { id: 2, img: "" },
-      { id: 7, img: "images/photos/08.jpg" },
-      { id: 12, img: "images/photos/15.jpg" }
-    ];
-    scenes.innerHTML = cards.map((c) => {
-      const s = spots.find((x) => x.id === c.id) || { name: "" };
-      const bg = c.img ? `style="background-image:url('${c.img}')"` : "";
-      return `<a class="scene ${c.img ? "" : "plain"}" href="spot.html?id=${c.id}" ${bg}><span>${s.name}</span></a>`;
+    scenes.innerHTML = spots.map((s) => {
+      const src = spotPhoto[s.id];
+      const pic = src
+        ? `<img src="${src}" alt="${s.name}" loading="lazy">`
+        : `<span class="ph">${pad(s.id)}</span>`;
+      return `<a class="spot-tile" href="spot.html?id=${s.id}">
+        <div class="pic">${pic}</div>
+        <div class="ribbon"><b>${s.name}</b></div>
+        <div class="body">
+          <p class="sub">${pad(s.id)}　${s.subtitle}</p>
+          <p class="blurb">${s.summary}</p>
+          <span class="go" aria-hidden="true">›</span>
+        </div>
+      </a>`;
     }).join("");
   }
 
-  const catalog = document.getElementById("catalog-grid");
-  if (catalog) {
-    catalog.innerHTML = spots.map((s) => {
-      const src = spotPhoto[s.id];
-      const href = new URL(`spot.html?id=${s.id}`, location.href).href;
-      const qr = "https://api.qrserver.com/v1/create-qr-code/?size=72x72&margin=2&data=" + encodeURIComponent(href);
-      const pic = src
-        ? `<img src="${src}" alt="">`
-        : `<div class="cat-ico">${icon(s.icon)}</div>`;
-      return `<a class="cat-card" href="spot.html?id=${s.id}">
-        <div class="cat-pic">${pic}</div>
-        <div class="cat-copy">
-          <h3>${String(s.id).padStart(2, "0")} ${s.name}</h3>
-          <p class="cat-sub">${s.subtitle} · ${s.statusLabel}</p>
-          <p>${s.summary}</p>
-        </div>
-        <img class="cat-qr" src="${qr}" alt="${t("qrHint")} ${s.name}" width="72" height="72">
-      </a>`;
+  const route = document.getElementById("home-route");
+  if (route) {
+    const ids = [1, 2, 6, 7, 12];
+    const steps = ids.map((id) => spots.find((s) => s.id === id)).filter(Boolean);
+    route.innerHTML = steps.map((s, i) => {
+      const line = i < steps.length - 1 ? '<span class="route-line" aria-hidden="true"></span>' : "";
+      return `<a class="route-step" href="spot.html?id=${s.id}"><b>${pad(i + 1)}</b>${s.name}</a>${line}`;
     }).join("");
   }
 
   const list = document.getElementById("news-list");
   if (list) {
     list.innerHTML = news.map((n) =>
-      `<a href="spot.html?id=${n.id}"><small>${n.date}</small><br>${n.title}</a>`
+      `<a href="spot.html?id=${n.id}"><span><small>${n.date}</small><br>${n.title}</span><span aria-hidden="true">→</span></a>`
     ).join("");
   }
 })();

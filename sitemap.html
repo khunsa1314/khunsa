@@ -4,32 +4,45 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>網站導覽｜昆沙紀念館</title>
+  <meta name="description" content="昆沙紀念館網站導覽與快速鍵說明。">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-title="sitemapTitle">
-  <main id="main" class="page">
-    <div class="wrap crumb"><a href="index.html" data-i18n="crumbHome">首頁</a> ＞ <span data-i18n="sitemapTitle">網站導覽</span></div>
-    <div class="wrap prose">
-      <h1 class="page-title" data-i18n="sitemapTitle">網站導覽</h1>
-      <p data-i18n="sitemapHint">本網站快速鍵：Alt+U 上方選單、Alt+C 主要內容。</p>
-      <h2 data-i18n="sitemap1">1. 首頁</h2>
-      <ul>
-        <li><a href="index.html" data-i18n="sitemapHome">昆沙紀念館首頁</a></li>
-        <li><a href="index.html#news" data-i18n="newsTitle">園內情報</a></li>
-        <li><a href="index.html#explore" data-i18n="exploreTitle">園區探索</a></li>
-      </ul>
-      <h2 data-i18n="sitemap2">2. 參觀資訊</h2>
-      <ul>
-        <li><a href="visit.html" data-i18n="sitemapVisit">開放狀態、建議行程、遊園須知</a></li>
-        <li><a href="map.html" data-i18n="mapTitle">園區地圖</a></li>
-      </ul>
-      <h2 data-i18n="sitemap3">3. 園區介紹</h2>
-      <ul>
-        <li><a href="about.html" data-i18n="navHistory">歷史沿革</a></li>
-        <li><a href="spot.html?id=12" data-i18n="navMural">壁畫解說</a></li>
-      </ul>
-      <h2 data-i18n="sitemap4">4. 園區探索（十二景）</h2>
-      <ul id="spot-index"></ul>
+  <main id="main" class="page sitemap-page">
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="index.html" data-i18n="crumbHome">首頁</a> / <span data-i18n="sitemapTitle">網站導覽</span>
+      </nav>
+      <header class="page-hero">
+        <h1 class="page-title" data-i18n="sitemapTitle">網站導覽</h1>
+        <p data-i18n="sitemapHint">本網站快速鍵：Alt+U 上方選單、Alt+C 主要內容。</p>
+      </header>
+      <div class="prose">
+        <h2 data-i18n="sitemap1">1. 首頁</h2>
+        <ul>
+          <li><a href="index.html" data-i18n="sitemapHome">昆沙紀念館首頁</a></li>
+          <li><a href="guide.html" data-i18n="sitemapGuide">數位導覽入口</a></li>
+          <li><a href="index.html#news" data-i18n="newsTitle">園內情報</a></li>
+          <li><a href="index.html#explore" data-i18n="exploreTitle">園區探索</a></li>
+          <li><a href="index.html#orbit" data-i18n="orbitTitle">虛擬園區</a></li>
+        </ul>
+        <h2 data-i18n="sitemap2">2. 參觀資訊</h2>
+        <ul>
+          <li><a href="visit.html" data-i18n="sitemapVisit">開放狀態、建議行程、遊園須知</a></li>
+          <li><a href="map.html" data-i18n="mapTitle">園區地圖</a></li>
+        </ul>
+        <h2 data-i18n="sitemap3">3. 園區介紹</h2>
+        <ul>
+          <li><a href="about.html" data-i18n="navHistory">歷史沿革</a></li>
+          <li><a href="about.html#sites" data-i18n="aboutSitesH">歷史中的兩個重要地點</a></li>
+          <li><a href="about.html#views" data-i18n="aboutViewsH">不同資料中的昆沙</a></li>
+          <li><a href="about.html#school" data-i18n="navSchool">大同中學</a></li>
+          <li><a href="about.html#sources" data-i18n="aboutSourcesH">關於本網站資料</a></li>
+          <li><a href="spot.html?id=12" data-i18n="navMural">壁畫解說</a></li>
+        </ul>
+        <h2 data-i18n="sitemap4">4. 園區探索（十二處據點）</h2>
+        <ul id="spot-index"></ul>
+      </div>
     </div>
   </main>
   <script src="js/spots.js"></script>

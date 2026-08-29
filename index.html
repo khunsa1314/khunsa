@@ -4,111 +4,201 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>昆沙紀念館</title>
-  <meta name="description" content="昆沙紀念館（滿星疊）園區網站：參觀資訊、十二景探索、壁畫解說。">
+  <meta name="description" content="滿星疊大同中學學生整理的地方歷史與昆沙紀念館數位導覽：參觀資訊、園區據點與歷史沿革。">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="home-page" data-title="siteName">
   <main id="main">
-    <h1 class="sr" data-i18n="siteName">昆沙紀念館</h1>
-
-    <section class="stage" id="stage" aria-roledescription="carousel">
-      <div class="stage-viewport">
-        <div class="stage-track" id="stage-track"></div>
-        <button class="stage-pause" type="button" id="stage-pause" aria-pressed="false">❚❚</button>
-        <button class="stage-nav stage-prev" type="button" id="stage-prev" aria-label="上一張">‹</button>
-        <button class="stage-nav stage-next" type="button" id="stage-next" aria-label="下一張">›</button>
+    <section class="hero" id="stage" aria-roledescription="carousel" aria-label="hero">
+      <div class="hero-track" id="stage-track"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-copy">
+          <p class="hero-kicker" data-i18n="siteEn">KHUN SA MEMORIAL</p>
+          <h1 data-i18n="siteName">昆沙紀念館</h1>
+          <p class="hero-lead" data-i18n="slide1Text">入口銅像、土牢、炸彈殘骸、童軍駐房間與壁畫，是目前可以靠近觀看的據點。</p>
+          <div class="hero-cta">
+            <a class="btn btn-solid" href="#orbit" data-i18n="ctaExplore">探索園區</a>
+            <a class="btn btn-ghost" href="visit.html" data-i18n="ctaVisit">參觀資訊</a>
+          </div>
+      </div>
+      <div class="hero-ui">
+        <div class="hero-ind" id="stage-ind" aria-live="polite">01 / 12</div>
+        <div class="hero-ctrls">
+          <button class="hero-ctrl" type="button" id="stage-prev" aria-label="上一張">‹</button>
+          <button class="hero-ctrl" type="button" id="stage-pause" aria-pressed="false"></button>
+          <button class="hero-ctrl" type="button" id="stage-next" aria-label="下一張">›</button>
+        </div>
       </div>
     </section>
 
-    <nav class="wrap shortcuts stagger" aria-label="shortcuts">
-      <a class="shortcut" href="visit.html">
-        <span class="sc-ico" aria-hidden="true">
-          <svg viewBox="0 0 64 64"><rect x="12" y="18" width="40" height="28" rx="3" fill="none" stroke="currentColor" stroke-width="3"/><path d="M12 28h40M22 18v-4h20v4" fill="none" stroke="currentColor" stroke-width="3"/></svg>
-        </span>
-        <span data-i18n="scVisit">參觀資訊</span>
-      </a>
-      <a class="shortcut" href="visit.html#status">
-        <span class="sc-ico" aria-hidden="true">
-          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="20" fill="none" stroke="currentColor" stroke-width="3"/><path d="M32 18v16l10 6" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg>
-        </span>
+    <nav class="visit-bar" aria-label="shortcuts">
+      <div class="wrap visit-bar-inner">
+      <a href="visit.html#hours">
         <span data-i18n="scHours">開放時間</span>
+        <small>08:00–17:00</small>
       </a>
-      <a class="shortcut" href="map.html">
-        <span class="sc-ico" aria-hidden="true">
-          <svg viewBox="0 0 64 64"><path d="M16 20l16-8 16 8v28l-16 8-16-8z" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="32" cy="30" r="7" fill="none" stroke="currentColor" stroke-width="3"/><path d="M32 37v11" stroke="currentColor" stroke-width="3"/></svg>
-        </span>
+      <a href="map.html">
         <span data-i18n="scMap">園區地圖</span>
+        <small>→</small>
       </a>
-      <a class="shortcut" href="#news">
-        <span class="sc-ico" aria-hidden="true">
-          <svg viewBox="0 0 64 64"><rect x="14" y="12" width="36" height="40" rx="2" fill="none" stroke="currentColor" stroke-width="3"/><path d="M22 24h20M22 32h20M22 40h12" stroke="currentColor" stroke-width="3"/></svg>
-        </span>
-        <span data-i18n="scNews">最新消息</span>
-      </a>
-      <a class="shortcut" href="about.html">
-        <span class="sc-ico" aria-hidden="true">
-          <svg viewBox="0 0 64 64"><path d="M12 48h40M16 48V28l16-12 16 12v20" fill="none" stroke="currentColor" stroke-width="3"/><path d="M28 48V34h8v14" fill="none" stroke="currentColor" stroke-width="3"/></svg>
-        </span>
+      <a href="about.html">
         <span data-i18n="scHistory">歷史沿革</span>
+        <small>→</small>
       </a>
+      <a href="#news">
+        <span data-i18n="scNews">最新消息</span>
+        <small>→</small>
+      </a>
+      </div>
     </nav>
 
-    <section class="orbit-band paper" id="orbit">
-      <div class="wrap">
-        <p class="orbit-home"><a href="index.html" data-i18n="orbitHome">首頁</a></p>
-        <h2 class="sr" data-i18n="orbitTitle">虛擬園區</h2>
-        <div class="orbit" id="orbit-map"></div>
-      </div>
-    </section>
-
-    <section class="wrap section paper-pad" id="halls">
-      <h2 class="sr" data-i18n="hallsTitle">館藏展廳</h2>
-      <div class="exhibits">
-        <article class="exhibit">
-          <a href="spot.html?id=1"><img src="images/photos/18.jpg" alt="" data-i18n-alt="hall1Title"></a>
-          <p class="plaque" data-i18n="hall1Title">騎馬青銅雕像</p>
-          <div class="exhibit-body">
-            <h3 data-i18n="hall1Title">騎馬青銅雕像</h3>
-            <p data-i18n="hall1Text">園區入口最醒目的地標。村民於昆沙先生過世後鑄成馬上英姿，還原他在金三角山區策馬的樣貌。</p>
-            <a class="more-btn" href="spot.html?id=1" data-i18n="readMore">閱讀全文</a>
+    <section class="section js-reveal">
+      <div class="wrap intro">
+        <span class="intro-bg" aria-hidden="true">MEMORIAL</span>
+        <div>
+          <p class="kicker" data-i18n="siteEn">KHUN SA MEMORIAL</p>
+          <h2 data-i18n="introTitle">滿星疊地方歷史與紀念館</h2>
+          <div class="measure">
+            <p data-i18n="introLead">昆沙紀念館位於泰國清萊府滿星疊（Ban Thoed Thai，舊稱 Ban Hin Taek）。地方華文紀錄稱此地曾是昆沙在泰北安營的基地，也是大同中學所在的村子。</p>
+            <p data-i18n="bioText">本網站由滿星疊大同中學學生整理地方歷史、園區文化與相關史料。</p>
           </div>
-        </article>
-        <article class="exhibit">
-          <a href="about.html"><img src="images/photos/16.jpg" alt="" data-i18n-alt="hall2Title"></a>
-          <p class="plaque" data-i18n="hall2Title">坐像</p>
-          <div class="exhibit-body">
-            <h3 data-i18n="hall2Title">坐像</h3>
-            <p data-i18n="hall2Text">館內坐像呈現日常起居的樸實儀態，與外界對武裝領袖居所的刻板印象不同。</p>
-            <a class="more-btn" href="about.html" data-i18n="readMore">閱讀全文</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section class="wrap section" id="scenes">
-      <h2 data-i18n="scenesTitle">園區據點</h2>
-      <div class="scenes" id="scene-grid"></div>
-    </section>
-
-    <section class="wrap section" id="explore">
-      <h2 data-i18n="catalogTitle">館藏目錄</h2>
-      <div class="catalog" id="catalog-grid"></div>
-    </section>
-
-    <section class="wrap section" id="news">
-      <h2 data-i18n="newsTitle">園內情報</h2>
-      <div class="two-col">
-        <div class="side-box">
-          <h2 data-i18n="newsUpdates">園區動態</h2>
-          <div class="news-list" id="news-list"></div>
         </div>
-        <div class="side-box">
-          <h2 data-i18n="recTitle">建議行程</h2>
-          <ul>
-            <li><a href="visit.html#route" data-i18n="rec1">半日開放路線：銅像 → 土牢 → 炸彈殘骸 → 導覽室 → 壁畫</a></li>
-            <li><a href="map.html" data-i18n="rec2">十二景編號地圖</a></li>
-            <li><a href="visit.html#rules" data-i18n="rec3">遊園須知：不進入暫不開放房舍</a></li>
-          </ul>
+        <figure>
+          <img src="images/photos/memorial-hall.jpg" alt="" data-i18n-alt="siteName" loading="lazy">
+        </figure>
+      </div>
+    </section>
+
+    <section class="section js-reveal" id="orbit">
+      <div class="wrap virt">
+        <figure class="virt-visual">
+          <img src="images/photos/18.jpg" alt="" data-i18n-alt="hall1Title" loading="lazy">
+        </figure>
+        <div>
+          <p class="kicker" data-i18n="virtEn">Explore the Memorial</p>
+          <h2 data-i18n="orbitTitle">虛擬園區</h2>
+        <p data-i18n="virtLead">依園區現有內容整理的十二處據點</p>
+          <p data-i18n="mapP">自入口銅像起，依編號走完十二處。綠色編號為目前可參觀，灰色為暫不開放內覽。</p>
+          <ul class="spot-lines" id="virt-lines"></ul>
+          <a class="btn btn-line" href="map.html" data-i18n="viewMap">查看園區地圖</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section js-reveal" id="halls">
+      <div class="wrap">
+        <p class="kicker" data-i18n="hallKicker">館藏</p>
+        <h2 data-i18n="hallsTitle">館藏展廳</h2>
+        <div class="editorial">
+          <article class="ed-card">
+            <a class="ed-img" href="spot.html?id=1">
+              <img src="images/photos/18.jpg" alt="" data-i18n-alt="hall1Title" loading="lazy">
+            </a>
+            <div class="ed-copy">
+              <p class="kicker" data-i18n="hallKicker">館藏</p>
+              <h3 data-i18n="hall1Title">騎馬青銅雕像</h3>
+              <p data-i18n="hall1Text">園區入口最醒目的地標。村民於昆沙先生過世後鑄成馬上英姿，還原他在金三角山區策馬的樣貌。</p>
+              <a class="more" href="spot.html?id=1" data-i18n="readStory">閱讀故事 →</a>
+            </div>
+          </article>
+          <article class="ed-card reverse">
+            <a class="ed-img" href="spot.html?id=9">
+              <img src="images/photos/spot-09.jpg" alt="" data-i18n-alt="hall2Title" loading="lazy">
+            </a>
+            <div class="ed-copy">
+              <p class="kicker" data-i18n="hallKicker">館藏</p>
+              <h3 data-i18n="hall2Title">坐像</h3>
+              <p data-i18n="hall2Text">館內坐像呈現日常起居的樸實儀態，與外界對武裝領袖居所的刻板印象不同。</p>
+              <a class="more" href="spot.html?id=9" data-i18n="readStory">閱讀故事 →</a>
+            </div>
+          </article>
+          <article class="ed-card">
+            <a class="ed-img" href="about.html">
+              <img src="images/photos/17.jpg" alt="" data-i18n-alt="hall3Title" loading="lazy">
+            </a>
+            <div class="ed-copy">
+              <p class="kicker" data-i18n="hallKicker">館藏</p>
+              <h3 data-i18n="hall3Title">騎馬畫像</h3>
+              <p data-i18n="hall3Text">館藏油畫描繪昆沙策馬形象，是紀念館內重要的視覺史料。</p>
+              <a class="more" href="about.html" data-i18n="readStory">閱讀故事 →</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section js-reveal" id="explore">
+      <span id="scenes"></span>
+      <div class="wrap">
+        <p class="kicker" data-i18n="exploreTitle">園區探索</p>
+        <h2 data-i18n="scenesTitle">園區據點</h2>
+        <div class="spot-grid" id="scene-grid"></div>
+      </div>
+    </section>
+
+    <section class="section js-reveal" id="timeline">
+      <div class="wrap">
+        <p class="kicker" data-i18n="navHistory">歷史沿革</p>
+        <h2 data-i18n="timelineTitle">歷史沿革</h2>
+        <div class="timeline">
+          <div class="tl-item">
+            <b data-i18n="tl1960y">1960s</b>
+            <p data-i18n="tl1960"></p>
+          </div>
+          <div class="tl-item">
+            <b data-i18n="tl1975y">1975</b>
+            <p data-i18n="tl1975"></p>
+          </div>
+          <div class="tl-item">
+            <b data-i18n="tl1982y">1982</b>
+            <p data-i18n="tl1982"></p>
+          </div>
+          <div class="tl-item">
+            <b data-i18n="tl1993y">1993</b>
+            <p data-i18n="tl1993"></p>
+          </div>
+          <div class="tl-item">
+            <b data-i18n="tl2007y">2007</b>
+            <p data-i18n="tl2007"></p>
+          </div>
+        </div>
+        <a class="btn btn-line" href="about.html" data-i18n="readHistory">閱讀完整歷史</a>
+      </div>
+    </section>
+
+    <section class="section js-reveal" id="route-home">
+      <div class="wrap">
+        <p class="kicker" data-i18n="recTitle">建議行程</p>
+        <h2 data-i18n="visitRouteH">建議行程</h2>
+        <p data-i18n="rec1">半日開放路線：銅像 → 土牢 → 炸彈殘骸 → 導覽室 → 壁畫</p>
+        <div class="route" id="home-route"></div>
+        <p><a href="map.html" data-i18n="rec2">十二處據點編號地圖</a></p>
+        <p><a href="visit.html#rules" data-i18n="rec3">遊園須知：不進入暫不開放房舍</a></p>
+        <p><a class="btn btn-line" href="map.html" data-i18n="viewMap">查看園區地圖</a></p>
+      </div>
+    </section>
+
+    <section class="section js-reveal" id="news">
+      <div class="wrap">
+        <p class="kicker" data-i18n="newsKicker">NEWS</p>
+        <h2 data-i18n="newsTitle">園內情報</h2>
+        <div class="news-layout">
+          <article class="news-feature">
+            <a href="about.html">
+              <img src="images/photos/01.jpg" alt="" data-i18n-alt="newsFeatureTitle" loading="lazy">
+            </a>
+            <p class="kicker" data-i18n="newsFeatureKicker">歷史影像</p>
+            <h3 data-i18n="newsFeatureTitle">歷史影像中的隊列</h3>
+            <p data-i18n="newsFeatureText">滿星疊營地曾是蒙傣軍駐紮與整訓之地。這張隊列照片留下官兵列隊、山林為幕的現場尺度，也說明今日紀念館何以沿著舊日營區動線開放參觀。</p>
+            <a class="more" href="about.html" data-i18n="readMore">閱讀全文</a>
+          </article>
+          <div>
+            <h3 data-i18n="newsUpdates">園區動態</h3>
+            <div class="news-list" id="news-list"></div>
+            <p data-i18n="newsU1">目前可參觀五處：銅像、土牢、炸彈殘骸、導覽室、壁畫</p>
+            <p data-i18n="newsU2">客房、餐廳、宿舍、副官住所、會客室、臥室、禪房暫不內覽</p>
+            <p data-i18n="newsU3">童軍駐房間現陳列撣邦地圖、老照片與昆沙生平展板</p>
+          </div>
         </div>
       </div>
     </section>

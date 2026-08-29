@@ -18,50 +18,6 @@
     }
   };
 
-  function menuItems(spots) {
-    return [
-      {
-        label: t("navNews"),
-        href: "index.html#news",
-        children: [
-          { label: t("navNewsUpdates"), href: "index.html#news" },
-          { label: t("navNewsNotes"), href: "index.html#news" }
-        ]
-      },
-      {
-        label: t("navVisit"),
-        href: "visit.html",
-        children: [
-          { label: t("navStatus"), href: "visit.html#status" },
-          { label: t("navRoute"), href: "visit.html#route" },
-          { label: t("navMap"), href: "map.html" },
-          { label: t("navRules"), href: "visit.html#rules" }
-        ]
-      },
-      {
-        label: t("navAbout"),
-        href: "about.html",
-        children: [
-          { label: t("navHistory"), href: "about.html" },
-          { label: t("navName"), href: "about.html#name" },
-          { label: t("navBattle"), href: "about.html#battle" },
-          { label: t("navSchool"), href: "about.html#school" },
-          { label: t("navOpenSpots"), href: "visit.html#open" },
-          { label: t("navClosedSpots"), href: "visit.html#closed" },
-          { label: t("navMural"), href: "spot.html?id=12" }
-        ]
-      },
-      {
-        label: t("navExplore"),
-        href: "index.html#explore",
-        children: spots.map((s) => ({
-          label: `${String(s.id).padStart(2, "0")} ${s.name}`,
-          href: `spot.html?id=${s.id}`
-        }))
-      }
-    ];
-  }
-
   function langHtml() {
     const cur = getLang();
     return `
@@ -72,97 +28,125 @@
       </nav>`;
   }
 
+  function fsHtml() {
+    return `
+      <span class="fs">
+        ${t("fontSize")}
+        <button type="button" data-fs="s" aria-label="${t("fontS")}">${t("fontS")}</button>
+        <button type="button" data-fs="m" aria-label="${t("fontM")}">${t("fontM")}</button>
+        <button type="button" data-fs="l" aria-label="${t("fontL")}">${t("fontL")}</button>
+      </span>`;
+  }
+
+  function searchHtml(id, compact) {
+    const ph = compact ? t("search") : t("searchPlaceholder");
+    const btn = compact
+      ? `<button type="submit" aria-label="${t("search")}">↗</button>`
+      : `<button type="submit">${t("search")}</button>`;
+    return `
+      <form class="search${compact ? " is-compact" : ""}" action="search.html" method="get" role="search">
+        <label class="sr" for="${id}">${t("search")}</label>
+        <input id="${id}" name="q" type="search" placeholder="${ph}">
+        ${btn}
+      </form>`;
+  }
+
   function headerHtml(spots) {
-    const items = menuItems(spots).map((item) => {
-      const links = item.children
-        .map((c) => `<li><a href="${c.href}">${c.label}</a></li>`)
-        .join("");
-      const subClass = item.children.length > 6 ? "sub wide" : "sub";
-      return `
-        <li class="nav-item">
-          <a href="${item.href}">${item.label}</a>
-          <ul class="${subClass}">${links}</ul>
-        </li>`;
-    }).join("");
+    const spotLinks = spots.map((s) =>
+      `<li><a href="spot.html?id=${s.id}">${String(s.id).padStart(2, "0")} ${s.name}</a></li>`
+    ).join("");
 
     return `
       <a class="skip" href="#main" accesskey="C">${t("skip")}</a>
-      <div class="utility">
-        <div class="wrap utility-inner">
-          <a href="index.html" accesskey="U">${t("home")}</a>
-          <a href="sitemap.html">${t("sitemap")}</a>
-          <span class="fs">
-            ${t("fontSize")}
-            <button type="button" data-fs="s" aria-label="${t("fontS")}">${t("fontS")}</button>
-            <button type="button" data-fs="m" aria-label="${t("fontM")}">${t("fontM")}</button>
-            <button type="button" data-fs="l" aria-label="${t("fontL")}">${t("fontL")}</button>
-          </span>
-          ${langHtml()}
-        </div>
-      </div>
-      <header class="masthead">
-        <div class="wrap masthead-inner">
-          <a class="logo" href="index.html">
-            <span class="mark" aria-hidden="true">昆</span>
-            <span>
-              <strong>${t("siteName")}</strong>
-              <em>${t("sitePlace")}</em>
-            </span>
+      <header class="site-nav">
+        <div class="wrap nav-bar">
+          <a class="logo" href="index.html" accesskey="U">
+            <strong>${t("siteName")}</strong>
+            <em>${t("siteEn")}</em>
           </a>
-          <form class="search" action="search.html" method="get" role="search">
-            <label class="sr" for="q">${t("search")}</label>
-            <input id="q" name="q" type="search" placeholder="${t("searchPlaceholder")}">
-            <button type="submit">${t("search")}</button>
-          </form>
-          ${langHtml()}
-          <button class="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav">${t("menu")}</button>
-        </div>
-        <nav id="main-nav" class="main-nav" aria-label="${t("navExplore")}">
-          <div class="wrap">
-            <ul>${items}</ul>
+          <ul class="nav-links">
+            <li><a href="guide.html">${t("navGuide")}</a></li>
+            <li><a href="visit.html">${t("navVisit")}</a></li>
+            <li><a href="map.html">${t("navMap")}</a></li>
+            <li><a href="index.html#news">${t("navNews")}</a></li>
+            <li><a href="about.html">${t("navHistory")}</a></li>
+          </ul>
+          <div class="nav-tools">
+            <a class="search-link" href="search.html">${t("search")}</a>
+            ${langHtml()}
+            <button class="menu-btn" type="button" aria-expanded="false" aria-controls="main-nav" aria-label="${t("menu")}">
+              <span></span>
+            </button>
           </div>
-        </nav>
-      </header>`;
+        </div>
+      </header>
+      <nav id="main-nav" class="drawer" aria-label="${t("menu")}">
+        <button class="drawer-close" type="button">${t("closeMenu")}</button>
+        <h2>${t("quickLinks")}</h2>
+        <ul>
+          <li><a href="guide.html">${t("navGuide")}</a></li>
+          <li><a href="visit.html">${t("navVisit")}</a></li>
+          <li><a href="visit.html#status">${t("navStatus")}</a></li>
+          <li><a href="map.html">${t("navMap")}</a></li>
+          <li><a href="index.html#news">${t("navNews")}</a></li>
+          <li><a href="about.html">${t("navHistory")}</a></li>
+          <li><a href="visit.html#route">${t("navRoute")}</a></li>
+          <li><a href="visit.html#rules">${t("navRules")}</a></li>
+          <li><a href="sitemap.html">${t("sitemap")}</a></li>
+        </ul>
+        <h2>${t("navExplore")}</h2>
+        <ul>${spotLinks}</ul>
+        <div class="drawer-tools">
+          ${searchHtml("q-drawer")}
+          ${langHtml()}
+          ${fsHtml()}
+        </div>
+      </nav>`;
   }
 
-  function footerHtml(spots) {
+  function footerHtml() {
     return `
       <footer class="site-foot">
         <div class="wrap foot-grid">
           <div>
+            <p class="brand">${t("siteName")}<em>${t("siteEn")}</em></p>
+            <p>${t("footerAddress")}</p>
+            <p>${t("footerDisclaimer")}</p>
+          </div>
+          <div>
+            <h2>${t("quickLinks")}</h2>
+            <ul>
+              <li><a href="guide.html">${t("navGuide")}</a></li>
+              <li><a href="visit.html">${t("navVisit")}</a></li>
+              <li><a href="map.html">${t("navMap")}</a></li>
+              <li><a href="about.html">${t("navHistory")}</a></li>
+              <li><a href="index.html#news">${t("navNews")}</a></li>
+            </ul>
+          </div>
+          <div>
             <h2>${t("navVisit")}</h2>
             <ul>
+              <li><a href="visit.html#hours">${t("scHours")}</a></li>
               <li><a href="visit.html#status">${t("navStatus")}</a></li>
               <li><a href="visit.html#route">${t("navRoute")}</a></li>
-              <li><a href="map.html">${t("navMap")}</a></li>
               <li><a href="visit.html#rules">${t("navRules")}</a></li>
+              <li><a href="visit.html#open">${t("navOpenSpots")}</a></li>
             </ul>
           </div>
           <div>
             <h2>${t("navAbout")}</h2>
             <ul>
-              <li><a href="about.html">${t("navHistory")}</a></li>
+              <li><a href="about.html#place">${t("navHistory")}</a></li>
               <li><a href="about.html#school">${t("navSchool")}</a></li>
-              <li><a href="spot.html?id=1">${spots[0] ? spots[0].name : t("statue")}</a></li>
-              <li><a href="spot.html?id=7">${t("guideRoom")}</a></li>
-              <li><a href="spot.html?id=12">${t("navMural")}</a></li>
+              <li><a href="about.html#cave">${t("aboutCaveH")}</a></li>
+              <li><a href="about.html#battle">${t("navBattle")}</a></li>
+              <li><a href="about.html#sites">${t("aboutSitesH")}</a></li>
             </ul>
-          </div>
-          <div>
-            <h2>${t("navExplore")}</h2>
-            <ul>
-              ${spots.slice(0, 6).map((s) => `<li><a href="spot.html?id=${s.id}">${s.name}</a></li>`).join("")}
-            </ul>
-          </div>
-          <div>
-            <h2>${t("footerContact")}</h2>
-            <p>${t("footerAddress")}</p>
-            <p>${t("footerDisclaimer")}</p>
           </div>
         </div>
         <div class="wrap foot-meta">
-          <span>${t("footerUpdated")}</span>
           <span>${t("footerBrand")}</span>
+          <span>${t("footerUpdated")}</span>
         </div>
       </footer>`;
   }
@@ -173,6 +157,15 @@
     document.querySelectorAll(".fs button").forEach((btn) => {
       btn.classList.toggle("is-on", btn.dataset.fs === size);
     });
+  }
+
+  function setDrawer(open) {
+    const nav = document.getElementById("main-nav");
+    const menuBtn = document.querySelector(".menu-btn");
+    if (!nav || !menuBtn) return;
+    nav.classList.toggle("is-open", open);
+    menuBtn.setAttribute("aria-expanded", String(open));
+    document.body.classList.toggle("is-locked", open);
   }
 
   function bindChrome() {
@@ -186,18 +179,47 @@
     });
     const menuBtn = document.querySelector(".menu-btn");
     const nav = document.getElementById("main-nav");
+    const closeBtn = document.querySelector(".drawer-close");
     if (menuBtn && nav) {
-      menuBtn.addEventListener("click", () => {
-        const open = nav.classList.toggle("is-open");
-        menuBtn.setAttribute("aria-expanded", String(open));
-      });
+      menuBtn.addEventListener("click", () => setDrawer(!nav.classList.contains("is-open")));
     }
+    if (closeBtn) closeBtn.addEventListener("click", () => setDrawer(false));
+    if (nav) {
+      nav.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setDrawer(false)));
+    }
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") setDrawer(false);
+    });
+
+    const header = document.querySelector(".site-nav");
+    const onScroll = () => {
+      if (!header) return;
+      header.classList.toggle("is-scrolled", window.scrollY > 24);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+
+    const nodes = document.querySelectorAll(".js-reveal");
+    if (!nodes.length) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      nodes.forEach((el) => el.classList.add("is-in"));
+      return;
+    }
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-in");
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+    nodes.forEach((el) => io.observe(el));
   }
 
   window.KHUNSA.renderChrome = function renderChrome() {
     const spots = getSpots();
     document.body.insertAdjacentHTML("afterbegin", headerHtml(spots));
-    document.body.insertAdjacentHTML("beforeend", footerHtml(spots));
+    document.body.insertAdjacentHTML("beforeend", footerHtml());
     bindChrome();
     applyPage();
   };

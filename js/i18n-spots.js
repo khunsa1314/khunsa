@@ -7,8 +7,8 @@ window.KHUNSA_SPOTS_I18N = {
       location: "Memorial entrance",
       summary: "The park’s most visible landmark. After 2007, villagers had craftsmen cast Khun Sa on horseback in bronze.",
       body: [
-        "The bronze statue of Khun Sa on horseback is the most visible landmark at the entrance. After he died in 2007, villagers, in thanks, had the Homong township head invite craftsmen from Muse and Namkham. The work took about three months. Two statues were made: one riding, one seated, at a total cost of 80,000.",
-        "The statue restores his look as an armed leader riding in the Golden Triangle hills. Almost every visitor takes a photograph; few look into the regard for him that stands behind it."
+        "The bronze statue of Khun Sa on horseback is the most visible landmark at the entrance. After he died in 2007, local accounts say villagers asked the township head to invite craftsmen from Muse and Namkham. The work took about three months. Two statues were made: one riding, one seated, at a total cost of 80,000.",
+        "The statue shows him riding in the Golden Triangle hills. Many visitors take a photograph. Local accounts also treat the statue as a village memory of that period."
       ]
     },
     2: {
@@ -16,11 +16,11 @@ window.KHUNSA_SPOTS_I18N = {
       subtitle: "Old ruin · dungeon",
       statusLabel: "Open",
       location: "Slope left of the riding statue",
-      summary: "A dungeon built by Khun Sa’s troops at Homong for captives and those who broke military rules. Kept when the memorial was made.",
+      summary: "On-site notes say this dungeon was used by Mong Tai Army troops at Ban Thoed Thai for captives and those who broke military rules. It was kept when the memorial was made.",
       body: [
-        "On the slope left of the riding statue is an old ruin: the Mong Tai Army’s earth prison, also a dungeon. Khun Sa’s troops stationed at Homong built it to hold captives and those who broke military rules. Inside it was dark, damp and harsh.",
+        "On the slope left of the riding statue is an old ruin. Present park notes call it the Mong Tai Army’s earth prison, also a dungeon, used for captives and those who broke military rules. Inside it was dark and damp.",
         "The pit was also called a man-hole. Those who grew up in the force recall a gourd shape: a mouth about fifty centimetres across, room for one person to drop in; four to five metres deep, a ladder to climb out; a floor just wide enough to lie down, about 170 centimetres across, with no fittings. Those punished sat here in heat, cold, damp and insects.",
-        "After the army was disbanded the dungeon stood unused for years. It was kept on purpose when the memorial was built. Watch your step and the light. If you want a sense of how strictly the Shan force was run, this is one place to look."
+        "After the army was disbanded the dungeon stood unused for years. It was kept on purpose when the memorial was built. Watch your step and the light. Local guide notes also link this place to camp discipline."
       ]
     },
     3: {
@@ -58,31 +58,30 @@ window.KHUNSA_SPOTS_I18N = {
       subtitle: "Relics of 1982",
       statusLabel: "Open",
       location: "Park display",
-      summary: "Bomb remnants from the Thai assault on the camp in early 1982, collected after the war and shown as historical material.",
+      summary: "According to present display labels, these remnants are linked to fighting around Ban Hin Taek in 1982.",
       body: [
-        "The bomb remnants on display are from the Thai attack on Khun Sa’s camp in early 1982. The fighting ran about 21–24 January. Field notes say Thai forces moved at dawn the day after Zhang Suquan’s birthday, with ground troops, helicopters and bombers. Western papers called it a “second opium war”. Homong and nearby villages were shaken by the bombing.",
-        "From the 1960s Khun Sa built up the headquarters — temples, a market, schools, a guesthouse. After the fighting, many casings were left in the forest. Later they were collected and shown, as a record of that war. Do not climb or move the display."
+        "According to present display labels, the bomb remnants are linked to Thai military operations around Ban Hin Taek (滿星疊) in 1982. Local records also mention fear in the village. Some newspapers of the time used the phrase “opium war”; that was period language, not a verdict of this site.",
+        "From the 1960s Khun Sa and related groups were active along the Thai–Myanmar border; in the later 1970s Ban Hin Taek became an important base. Remnants left in the hills were later collected and shown. Do not climb or move the display."
       ]
     },
     7: {
-      name: "Boy-soldier room",
-      subtitle: "Now the guide room",
+      name: "Scout quarters",
+      subtitle: "Old dorm · displays",
       statusLabel: "Open",
-      location: "Guide room",
-      summary: "Once a boy-soldier dorm, now showing old photographs and records. This is the main room for guided talks.",
+      location: "Camp dormitory block",
+      summary: "The rooms where scouts lodged. Inside is a Khun Sa timeline board with old photographs.",
       body: [
-        "This was a boy-soldier dormitory. After the army left it was rearranged and is now the memorial’s guide room. Old photographs and historical material are on display. Guides also speak here.",
-        "Homong households once gave men by a “one in three, two in five” draw. Boys drawn into the junior force studied Thai and Chinese by day and trained as well. Many photographs in this room record that life. Discipline was strict, especially against soldiers using drugs; the earth pit was also used for punishment. The pit’s shape is on the earth-prison page. The Chinese school’s story is on the history page."
+        "These were the camp rooms for scouts, now used to show records. The board covers Khun Sa (about 1964–1996) with historical photographs. Read the board on site. Do not touch exhibits."
       ]
     },
     8: {
       name: "Adjutant’s quarters",
-      subtitle: "Papers and rest",
+      subtitle: "Papers and living",
       statusLabel: "Temporarily closed",
       location: "Adjutant’s house",
-      summary: "Where the adjutant rested, handled papers and helped with military work. The old layout is kept.",
+      summary: "Adjutant’s quarters. Shan maps, Sao Fah-period towns and portrait boards are shown inside.",
       body: [
-        "This was the living space of the Mong Tai Army adjutant. He rested here, handled documents, and helped Khun Sa with military affairs. The room keeps its old layout."
+        "This was the Mong Tai Army adjutant’s quarters, used for papers and camp work. Display boards now show Shan administrative maps, towns under the Sao Fah (1910–1959), and portraits. Entry is closed; the photograph shows the room."
       ]
     },
     9: {
@@ -90,9 +89,9 @@ window.KHUNSA_SPOTS_I18N = {
       subtitle: "Headquarters reception",
       statusLabel: "Temporarily closed",
       location: "Mong Tai Army headquarters",
-      summary: "Where visitors, local delegates and staff were received. Many talks and military discussions were held here.",
+      summary: "A seated figure of Khun Sa, a wooden table and curtains. Visitors and staff were received here.",
       body: [
-        "The reception room was an important space at Mong Tai Army headquarters, where Khun Sa received visitors, local delegates and staff. Many negotiations and military discussions took place here. It is one of the most historically charged rooms in the park."
+        "The reception room was where Khun Sa received visitors and staff. A seated figure, a wooden table and the old layout remain. Entry is closed."
       ]
     },
     10: {
@@ -100,9 +99,9 @@ window.KHUNSA_SPOTS_I18N = {
       subtitle: "Rest and military core",
       statusLabel: "Closed to the public",
       location: "Core house",
-      summary: "Where he rested, received officers and discussed military affairs. The house is very plain; the memorial restored the old layout as far as it could.",
+      summary: "The wooden sign reads KHUNSA’S BED ROOM. A plain house for rest, with a bed and paintings inside.",
       body: [
-        "While the Mong Tai Army held Homong, this was where Khun Sa rested, received officers and discussed military affairs. Unlike the luxury often imagined, the house is extremely plain. After the army was disbanded it stood empty for a long time. When the memorial was made, the old furnishings and layout were restored as far as possible."
+        "The sign says ห้องนอนขุนส่า / KHUNSA’S BED ROOM. Park notes treat this as Khun Sa’s living quarters. Inside: a wooden bed, a royal portrait, a handshake painting and Khun Sa on horseback. Closed to visitors."
       ]
     },
     11: {
@@ -120,9 +119,9 @@ window.KHUNSA_SPOTS_I18N = {
       subtitle: "People · army · state",
       statusLabel: "Open",
       location: "Park walls",
-      summary: "The mural shows a man and a woman in traditional Tai dress, with the army flag and the flag of the Shan State Republic.",
+      summary: "The brick entrance wall: Tai figures, Shan and army flags, and the words Ban Khun Sa / KHUN SA OLD CAMP.",
       body: [
-        "A historical mural is painted on the park wall. It shows a man and a woman in traditional Tai dress, together with the army flag and the flag of the Shan State Republic. It is not mere decoration: the images write “people, army, state” on the wall."
+        "The entrance brick wall has relief figures and the words บ้านขุนส่า and KHUN SA OLD CAMP. A man and a woman in Tai dress stand on either side; Shan and army flags sit in the middle. On-site notes link the images to ethnicity and the armed group. Details of the flags and dress are below."
       ]
     }
   },
@@ -134,8 +133,8 @@ window.KHUNSA_SPOTS_I18N = {
       location: "ทางเข้าพิพิธภัณฑ์",
       summary: "จุดเด่นที่สุดของพื้นที่ หลังปี 2007 ชาวบ้านให้ช่างหล่อรูปขุนส่าขี่ม้าด้วยทองสัมฤทธิ์",
       body: [
-        "รูปปั้นทองสัมฤทธิ์ขุนส่าขี่ม้าเป็นจุดเด่นที่สุดที่ทางเข้า หลังเขาถึงแก่อสัญกรรมในปี 2007 ชาวบ้านเพื่อแสดงความกตัญญู ให้กำนันบ้านห้วยมงเชิญช่างจากเมืองมาและน้ำคำมาสร้าง งานใช้เวลาประมาณสามเดือน ทำสององค์ ทั้งรูปขี่ม้าและรูปนั่ง รวมค่าใช้จ่ายแปดหมื่น",
-        "รูปปั้นคืนภาพผู้นำติดอาวุธขี่ม้าในเขาสามเหลี่ยมทองคำ นักท่องเที่ยวเกือบทุกคนถ่ายรูป แต่น้อยคนถามถึงความรู้สึกเคารพของชาวบ้านที่อยู่เบื้องหลัง"
+        "รูปปั้นทองสัมฤทธิ์ขุนส่าขี่ม้าเป็นจุดเด่นที่สุดที่ทางเข้า หลังเขาถึงแก่อสัญกรรมในปี 2007 ตามคำบอกเล่าท้องถิ่น ชาวบ้านให้กำนันเชิญช่างจากเมืองมาและน้ำคำมาสร้าง งานใช้เวลาประมาณสามเดือน ทำสององค์ ทั้งรูปขี่ม้าและรูปนั่ง รวมค่าใช้จ่ายแปดหมื่น",
+        "รูปปั้นแสดงภาพขี่ม้าในเขาสามเหลี่ยมทองคำ ผู้เข้าชมจำนวนมากถ่ายรูป ตามคำบอกเล่าท้องถิ่น รูปปั้นยังเป็นความทรงจำของหมู่บ้านต่อช่วงเวลานั้น"
       ]
     },
     2: {
@@ -143,11 +142,11 @@ window.KHUNSA_SPOTS_I18N = {
       subtitle: "ซากเดิม · คุกใต้ดิน",
       statusLabel: "เข้าชมได้",
       location: "ไหล่เขาด้านซ้ายของรูปขี่ม้า",
-      summary: "คุกใต้ดินที่กองของขุนส่าสร้างที่บ้านห้วยมง สำหรับเชลยและผู้ผิดวินัยทหาร คงไว้เมื่อจัดตั้งพิพิธภัณฑ์",
+      summary: "ตามคำอธิบายหน้างาน คอกใต้ดินนี้เคยใช้โดยกองทัพมองไทที่บ้านเทอดไทย สำหรับเชลยและผู้ผิดวินัยทหาร คงไว้เมื่อจัดตั้งพิพิธภัณฑ์",
       body: [
-        "บนไหล่เขาด้านซ้ายของรูปขี่ม้ามีซากเดิม คือ «คุกดิน» ของกองทัพมองไท หรือคุกใต้ดิน กองของขุนส่าที่ประจำบ้านห้วยมงสร้างไว้ขังเชลยและผู้ผิดวินัยทหาร ภายในมืด ชื้น และเลวร้าย",
+        "บนไหล่เขาด้านซ้ายของรูปขี่ม้ามีซากเดิม ตามคำอธิบายหน้างานปัจจุบัน คือ «คุกดิน» ของกองทัพมองไท หรือคุกใต้ดิน ใช้ขังเชลยและผู้ผิดวินัยทหาร ภายในมืดและชื้น",
         "คุกดินหรือหลุมคน ตามความทรงจำของผู้เติบโตในกอง มีรูปน้ำเต้า ปากเล็กเส้นผ่านศูนย์กลางราวห้าสิบเซนติเมตร ลงได้ทีละคน ลึกสี่ถึงห้าเมตร ต้องใช้บันไดขึ้น ก้นหลุมพอคนนอน เส้นผ่านศูนย์กลางราวหนึ่งร้อยเจ็ดสิบเซนติเมตร ไม่มีอุปกรณ์ ผู้ถูกลงโทษถูกขังที่นี่ ทนความชื้น ร้อน หนาว และยุง",
-        "หลังกองทัพสลาย คุกถูกทิ้งร้างหลายปี เมื่อจัดตั้งพิพิธภัณฑ์จึงคงซากนี้ไว้ ระวังฝีเท้าและแสง หากอยากเห็นวินัยของกองกำลังรัฐฉาน จุดนี้บอกได้ชัด"
+        "หลังกองทัพสลาย คุกถูกทิ้งร้างหลายปี เมื่อจัดตั้งพิพิธภัณฑ์จึงคงซากนี้ไว้ ระวังฝีเท้าและแสง ตามคำนำชมท้องถิ่น จุดนี้ยังโยงกับวินัยในค่าย"
       ]
     },
     3: {
@@ -185,31 +184,30 @@ window.KHUNSA_SPOTS_I18N = {
       subtitle: "วัตถุจากสงคราม 1982",
       statusLabel: "เข้าชมได้",
       location: "พื้นที่จัดแสดง",
-      summary: "ซากระเบิดจากการที่กองทัพไทยโจมตีค่ายต้นปี 1982 เก็บรวบรวมหลังสงครามและจัดแสดงเป็นหลักฐาน",
+      summary: "ตามป้ายจัดแสดงปัจจุบัน ซากนี้ถูกโยงกับเหตุการณ์ทางทหารแถบบ้านหินแตกราวปี 1982",
       body: [
-        "ซากระเบิดในพื้นที่คือวัตถุจากการที่กองทัพไทยโจมตีค่ายขุนส่าต้นปี 1982 ศึกประมาณ 21–24 มกราคม บันทึกภาคสนามว่ากองทัพบุกรุ่งเช้าวันหลังวันเกิดจางซูเฉวียน ผู้ช่วย หนังสือพิมพ์ตะวันตกเรียกสงครามฝิ่นครั้งที่สอง บ้านห้วยมงและหมู่บ้านใกล้เคียงตกใจจากการทิ้งระเบิด",
-        "ตั้งแต่ทศวรรษ 1960 ขุนส่าพัฒนาฐาน มีวัด ตลาด โรงเรียน ที่พักแขก หลังสงคราม เปลือกระเบิดเหลือเกลื่อนป่า คนรุ่นหลังเก็บมาจัดแสดง เป็นหลักฐานสำคัญของศึกครั้งนั้น ห้ามปีนหรือเคลื่อนย้าย"
+        "ตามป้ายจัดแสดงปัจจุบัน ซากระเบิดถูกโยงกับการปฏิบัติการทางทหารของไทยแถบบ้านหินแตก (滿星疊) ราวปี 1982 บันทึกท้องถิ่นยังกล่าวถึงความตื่นตระหนกในหมู่บ้าน หนังสือพิมพ์บางฉบับสมัยนั้นใช้คำว่าสงครามฝิ่น เป็นภาษาของยุคนั้น ไม่ใช่ข้อสรุปของเว็บนี้",
+        "ตั้งแต่ทศวรรษ 1960 ขุนส่าและกองกำลังที่เกี่ยวข้องเคลื่อนไหวตามแนวชายแดนไทย–เมียนมา ช่วงทศวรรษ 1970 ตอนปลาย บ้านหินแตกเป็นฐานสำคัญแห่งหนึ่ง ซากที่เหลือในป่าถูกเก็บมาจัดแสดงในภายหลัง ห้ามปีนหรือเคลื่อนย้าย"
       ]
     },
     7: {
-      name: "ห้องทหารเด็ก",
-      subtitle: "ปัจจุบันเป็นห้องนำชม",
+      name: "ห้องลูกเสือ",
+      subtitle: "หอพักเดิม · จัดแสดงเอกสาร",
       statusLabel: "เข้าชมได้",
-      location: "ห้องนำชม",
-      summary: "เคยเป็นหอพักทหารเด็ก บัดนี้จัดแสดงภาพเก่าและเอกสาร เป็นพื้นที่หลักของการบรรยาย",
+      location: "โซนหอพักในค่าย",
+      summary: "ห้องที่ลูกเสือเคยพัก ภายในมีแผ่นประวัติขุนส่าและภาพเก่า",
       body: [
-        "เดิมเป็นหอพักทหารเด็ก หลังกองทัพถอนจึงจัดใหม่ เป็นห้องนำชมของพิพิธภัณฑ์ ภายในมีภาพเก่าและเอกสารประวัติศาสตร์ ให้ผู้เข้าชมดู และเป็นพื้นที่หลักที่เจ้าหน้าที่บรรยาย",
-        "บ้านห้วยมงเคยเกณฑ์ชายตามหลักสามคนจับหนึ่ง ห้าคนจับสอง เด็กที่ถูกจับเข้ากองทหารเด็ก กลางวันเรียนไทยและจีน แล้วฝึกทหาร ภาพเก่าในห้องนำชมหลายภาพคือชีวิตรุ่นนั้น วินัยเคร่ง โดยเฉพาะห้ามทหารเสพยา คุกดินใช้ลงโทษด้วย รูปคุกดูที่หน้าคุกดิน ประวัติโรงเรียนจีนดูที่ประวัติความเป็นมา"
+        "ที่นี่เคยเป็นห้องพักลูกเสือ ปัจจุบันจัดแสดงเอกสาร มีแผ่นชีวประวัติขุนส่าราวปี 1964–1996 และภาพประวัติศาสตร์ อ่านตามแผ่นหน้างาน ห้ามจับของจัดแสดง"
       ]
     },
     8: {
       name: "ที่พักนายทหารคนสนิท",
-      subtitle: "เอกสารและการพัก",
+      subtitle: "เอกสารและการพักอาศัย",
       statusLabel: "ยังเข้าชมไม่ได้",
       location: "บ้านนายทหารคนสนิท",
-      summary: "ที่นายทหารคนสนิทพัก จัดการเอกสาร และช่วยงานทหาร ห้องคงผังเดิม",
+      summary: "ที่พักนายทหารคนสนิท ภายในมีแผนที่รัฐฉาน เมืองสมัยเจ้าฟ้า และภาพบุคคล",
       body: [
-        "ที่นี่เป็นที่อยู่ของนายทหารคนสนิทกองทัพมองไท เขาพักที่นี่ จัดการเอกสาร และช่วยขุนส่าในงานทหาร ห้องคงผังเดิม"
+        "ที่นี่เป็นที่พักนายทหารคนสนิทกองทัพมองไท ใช้จัดการเอกสาร ปัจจุบันมีแผ่นแผนที่เขตการปกครองรัฐฉาน เมืองในสมัยเจ้าฟ้าปี 1910–1959 และภาพบุคคล ยังไม่เปิดให้เข้า ภาพถ่ายแสดงห้องนี้"
       ]
     },
     9: {
@@ -229,7 +227,7 @@ window.KHUNSA_SPOTS_I18N = {
       location: "อาคารแกนกลาง",
       summary: "ที่เขาพัก รับนายทหาร และหารืองานทหาร บ้านเรียบง่ายมาก เมื่อจัดตั้งพิพิธภัณฑ์พยายามคืนผังเดิม",
       body: [
-        "ขณะกองทัพมองไทประจำบ้านห้วยมง ที่นี่คือที่ขุนส่าพัก รับนายทหาร และหารืองานทหาร ไม่ใช่ที่พักหรูตามภาพจำ บ้านเรียบง่ายมาก หลังกองทัพสลาย อาคารร้างนาน เมื่อจัดตั้งพิพิธภัณฑ์พยายามคืนเครื่องเรือนและผังเดิม"
+        "ตามคำอธิบายหน้างาน ขณะกองทัพมองไทอยู่ที่บ้านเทอดไทย ที่นี่เป็นห้องหนึ่งที่ขุนส่าพัก รับนายทหาร และหารืองาน บ้านดูเรียบง่ายมาก หลังกองทัพสลาย อาคารร้างนาน เมื่อจัดตั้งพิพิธภัณฑ์พยายามคืนเครื่องเรือนและผังเดิม"
       ]
     },
     11: {
@@ -247,9 +245,9 @@ window.KHUNSA_SPOTS_I18N = {
       subtitle: "ชาติ · กองทัพ · รัฐ",
       statusLabel: "เข้าชมได้",
       location: "กำแพงในพื้นที่",
-      summary: "ภาพมีชายหญิงในชุดไทใหญ่ ธงทหาร และธงสาธารณรัฐรัฐฉาน",
+      summary: "ภาพมีชายหญิงในชุดไทใหญ่ ธงทหาร และธงที่เกี่ยวข้อง ตามคำอธิบายหน้างาน",
       body: [
-        "บนกำแพงมีภาพจิตรกรรมเชิงสัญลักษณ์ เห็นชายหญิงในชุดไทใหญ่ ธงทหาร และธงสาธารณรัฐรัฐฉาน ไม่ใช่เครื่องประดับล้วน ๆ แต่ใช้ภาพเขียน «ชาติ กองทัพ รัฐ» ลงบนกำแพง"
+        "บนกำแพงมีภาพจิตรกรรมเชิงสัญลักษณ์ เห็นชายหญิงในชุดไทใหญ่ ธงทหาร และธงที่เกี่ยวข้อง ตามคำอธิบายหน้างาน ภาพโยงกับชาติพันธุ์ กองกำลังติดอาวุธ และข้อเสนอทางการเมืองของรัฐฉานในทศวรรษ 1990 ข้อเสนอนั้นเกิดหลักที่โฮมอง รัฐฉาน เมียนมา ไม่ใช่ที่บ้านเทอดไทยในไทย"
       ]
     }
   }

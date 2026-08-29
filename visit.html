@@ -4,29 +4,65 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>參觀資訊｜昆沙紀念館</title>
+  <meta name="description" content="昆沙紀念館參觀資訊：開放狀態、建議行程與遊園須知。">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-title="visitTitle">
   <main id="main" class="page">
-    <div class="wrap crumb"><a href="index.html" data-i18n="crumbHome">首頁</a> ＞ <span data-i18n="visitTitle">參觀資訊</span></div>
-    <div class="wrap prose">
-      <h1 class="page-title" data-i18n="visitTitle">參觀資訊</h1>
-      <h2 id="status" data-i18n="visitStatusH">開放狀態</h2>
-      <p data-i18n="visitStatusP">園區十二處據點並非全部開放內覽。目前可靠近觀看的是戶外地標、遺跡與導覽室；多數舊時內室僅能從外側辨認位置。</p>
-      <p id="open"><strong data-i18n="visitOpenLead">可參觀：</strong> <span id="open-names"></span></p>
-      <p id="closed"><strong data-i18n="visitClosedLead">暫不開放：</strong> <span id="closed-names"></span></p>
-      <h2 id="route" data-i18n="visitRouteH">建議行程</h2>
-      <p data-i18n="visitRouteP">若時間有限，建議走半日開放路線：</p>
-      <p id="route-line"></p>
-      <p data-i18n="visitRouteMap">完整十二景編號與相對位置，請見園區地圖。</p>
-      <h2 id="rules" data-i18n="visitRulesH">遊園須知</h2>
-      <ul>
-        <li data-i18n="visitR1">暫不開放的房舍請勿擅自進入，尊重現場管理。</li>
-        <li data-i18n="visitR2">土牢陰暗潮濕，靠近時請注意步履與光線。</li>
-        <li data-i18n="visitR3">銅像為村民集資鑄造的紀念物，拍照時請勿攀爬。</li>
-        <li data-i18n="visitR4">導覽室為解說主要空間，陳列老照片與史料，請依人員引導瀏覽。</li>
-        <li data-i18n="visitR5">開放狀態以館方當日公告為準。</li>
-      </ul>
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="index.html" data-i18n="crumbHome">首頁</a> / <span data-i18n="visitTitle">參觀資訊</span>
+      </nav>
+      <header class="page-hero">
+        <p class="kicker" data-i18n="visitKicker">VISIT</p>
+        <h1 class="page-title" data-i18n="visitTitle">參觀資訊</h1>
+      </header>
+      <figure class="page-hero-img">
+        <img src="images/photos/18.jpg" alt="" data-i18n-alt="hall1Title">
+      </figure>
+      <section id="status" class="js-reveal">
+        <h2 data-i18n="visitStatusH">開放狀態</h2>
+        <p class="measure" data-i18n="visitStatusP">園區十二處據點並非全部開放內覽。目前可靠近觀看的是戶外地標、遺跡與導覽室；多數舊時內室僅能從外側辨認位置。</p>
+        <section id="hours" aria-labelledby="hours-h">
+          <h3 id="hours-h" data-i18n="visitHoursH">開放時間</h3>
+          <p class="measure" data-i18n="visitHoursP">週一至週日均有開放。</p>
+          <dl class="hours-box">
+            <dt data-i18n="visitHoursDays">開放日</dt>
+            <dd data-i18n="visitHoursDaysV">星期一至星期日</dd>
+            <dt data-i18n="visitHoursTime">時間</dt>
+            <dd data-i18n="visitHoursTimeV">08:00－17:00</dd>
+          </dl>
+        </section>
+        <div class="status-grid">
+          <div class="status-col" id="open">
+            <h3><span class="dot" aria-hidden="true"></span><span data-i18n="visitOpenLead">可參觀：</span></h3>
+            <ul id="open-names"></ul>
+          </div>
+          <div class="status-col" id="closed">
+            <h3><span class="dot off" aria-hidden="true"></span><span data-i18n="visitClosedLead">暫不開放：</span></h3>
+            <ul id="closed-names"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="route" class="js-reveal">
+        <h2 data-i18n="visitRouteH">建議行程</h2>
+        <p data-i18n="visitRouteP">若時間有限，建議走半日開放路線：</p>
+        <div class="route" id="route-line"></div>
+        <p data-i18n="visitRouteMap">十二處據點的編號與相對位置，請見園區地圖。此為目前園區導覽整理，並非歷史上固定的正式名稱。</p>
+        <p><a class="btn btn-line" href="map.html" data-i18n="viewMap">查看園區地圖</a></p>
+      </section>
+
+      <section id="rules" class="js-reveal">
+        <h2 data-i18n="visitRulesH">遊園須知</h2>
+        <ol class="rules">
+          <li data-i18n="visitR1">暫不開放的房舍請勿擅自進入，尊重現場管理。</li>
+          <li data-i18n="visitR2">土牢陰暗潮濕，靠近時請注意步履與光線。</li>
+          <li data-i18n="visitR3">銅像為村民集資鑄造的紀念物，拍照時請勿攀爬。</li>
+          <li data-i18n="visitR4">導覽室為解說主要空間，陳列老照片與史料，請依人員引導瀏覽。</li>
+          <li data-i18n="visitR5">開放狀態以館方當日公告為準。</li>
+        </ol>
+      </section>
     </div>
   </main>
   <script src="js/spots.js"></script>
@@ -36,11 +72,18 @@
   <script>
     KHUNSA.renderChrome();
     const spots = KHUNSA.getSpots();
-    const sep = { zh: "、", th: " ", en: ", " }[KHUNSA_I18N.getLang()] || ", ";
-    document.getElementById("open-names").textContent = spots.filter((s) => s.status === "open").map((s) => s.name).join(sep);
-    document.getElementById("closed-names").textContent = spots.filter((s) => s.status === "closed").map((s) => s.name).join(sep);
+    function list(el, items) {
+      el.innerHTML = items.map((s) =>
+        `<li><a href="spot.html?id=${s.id}">${String(s.id).padStart(2, "0")} ${s.name}</a></li>`
+      ).join("");
+    }
+    list(document.getElementById("open-names"), spots.filter((s) => s.status === "open"));
+    list(document.getElementById("closed-names"), spots.filter((s) => s.status === "closed"));
     const open = [1, 2, 6, 7, 12].map((id) => spots.find((s) => s.id === id)).filter(Boolean);
-    document.getElementById("route-line").innerHTML = open.map((s) => `<a href="spot.html?id=${s.id}">${s.name}</a>`).join(" → ");
+    document.getElementById("route-line").innerHTML = open.map((s, i) => {
+      const line = i < open.length - 1 ? '<span class="route-line" aria-hidden="true"></span>' : "";
+      return `<a class="route-step" href="spot.html?id=${s.id}"><b>${String(i + 1).padStart(2, "0")}</b>${s.name}</a>${line}`;
+    }).join("");
   </script>
 </body>
 </html>
