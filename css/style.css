@@ -1039,6 +1039,12 @@ html[lang="en"] .spot-tile .ribbon b {
 .site-foot ul { margin: 0; padding: 0; list-style: none; }
 .site-foot a { color: #d8d2c6; }
 .site-foot a:hover { color: #fff; }
+.site-foot p,
+.site-foot li,
+.foot-meta span {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 .foot-meta {
   display: flex;
   justify-content: space-between;
@@ -1102,6 +1108,33 @@ html[lang="en"] .spot-tile .ribbon b {
   .nav-links { display: none; }
   .menu-btn { display: grid; place-items: center; }
   .nav-tools > .lang { display: none; }
+  .home-page .site-nav {
+    background: rgba(244, 240, 231, 0.96);
+    box-shadow: 0 1px 0 var(--line);
+  }
+  .home-page .site-nav:not(.is-scrolled) .logo,
+  .home-page .site-nav:not(.is-scrolled) .menu-btn,
+  .home-page .site-nav:not(.is-scrolled) .nav-tools {
+    color: var(--ink);
+  }
+  .home-page .site-nav:not(.is-scrolled) .logo em { color: var(--muted); }
+  .home-page .site-nav:not(.is-scrolled) .menu-btn { border-color: var(--ink); }
+  .nav-bar {
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .logo {
+    flex: 1 1 0;
+    max-width: calc(100% - 56px);
+  }
+  .nav-tools {
+    flex: 0 0 auto;
+  }
+  .js-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
   .hero {
     height: min(70vh, 560px);
     min-height: 360px;
@@ -1121,6 +1154,10 @@ html[lang="en"] .spot-tile .ribbon b {
   .route { flex-direction: column; }
   .route-line { width: 1px; height: 20px; flex: none; margin: 0 auto; }
   .page { padding-top: 24px; }
+  .foot-meta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 @media (max-width: 430px) {

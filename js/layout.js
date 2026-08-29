@@ -204,19 +204,35 @@
 
     const nodes = document.querySelectorAll(".js-reveal");
     if (!nodes.length) return;
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      nodes.forEach((el) => el.classList.add("is-in"));
+    const markIn = (el) => {
+      el.classList.add("is-in");
+    };
+    const revealVisible = () => {
+      nodes.forEach((el) => {
+        if (el.classList.contains("is-in")) return;
+        const rect = el.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 8 && rect.bottom > 8) markIn(el);
+      });
+    };
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      || window.matchMedia("(max-width: 768px)").matches) {
+      nodes.forEach(markIn);
       return;
     }
+    revealVisible();
+    requestAnimationFrame(revealVisible);
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add("is-in");
+          markIn(entry.target);
           io.unobserve(entry.target);
         }
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
-    nodes.forEach((el) => io.observe(el));
+    }, { threshold: 0.08, rootMargin: "0px 0px 0px 0px" });
+    nodes.forEach((el) => {
+      if (!el.classList.contains("is-in")) io.observe(el);
+    });
+    window.addEventListener("resize", revealVisible, { passive: true });
   }
 
   window.KHUNSA.renderChrome = function renderChrome() {
