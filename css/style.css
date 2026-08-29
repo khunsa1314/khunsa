@@ -894,6 +894,14 @@ html[lang="en"] .spot-tile .ribbon b {
   font-family: "Noto Serif TC", serif;
   font-size: 1.15rem;
 }
+.hours-box dd a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
 .map-visual img {
   width: 100%;
   aspect-ratio: 4 / 5;
