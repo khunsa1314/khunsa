@@ -88,6 +88,7 @@
           <li><a href="visit.html">${t("navVisit")}</a></li>
           <li><a href="visit.html#status">${t("navStatus")}</a></li>
           <li><a href="map.html">${t("navMap")}</a></li>
+          <li><a href="archive.html">${t("navGallery")}</a></li>
           <li><a href="index.html#news">${t("navNews")}</a></li>
           <li><a href="about.html">${t("navHistory")}</a></li>
           <li><a href="visit.html#route">${t("navRoute")}</a></li>
@@ -120,6 +121,7 @@
               <li><a href="visit.html">${t("navVisit")}</a></li>
               <li><a href="map.html">${t("navMap")}</a></li>
               <li><a href="about.html">${t("navHistory")}</a></li>
+              <li><a href="archive.html">${t("navGallery")}</a></li>
               <li><a href="index.html#news">${t("navNews")}</a></li>
             </ul>
           </div>
