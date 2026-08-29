@@ -36,7 +36,7 @@
   <script>
     KHUNSA.renderChrome();
     const spots = KHUNSA.getSpots();
-    const sep = { zh: "、", th: " ", my: "၊ ", en: ", " }[KHUNSA_I18N.getLang()] || ", ";
+    const sep = { zh: "、", th: " ", en: ", " }[KHUNSA_I18N.getLang()] || ", ";
     document.getElementById("open-names").textContent = spots.filter((s) => s.status === "open").map((s) => s.name).join(sep);
     document.getElementById("closed-names").textContent = spots.filter((s) => s.status === "closed").map((s) => s.name).join(sep);
     const open = [1, 2, 6, 7, 12].map((id) => spots.find((s) => s.id === id)).filter(Boolean);

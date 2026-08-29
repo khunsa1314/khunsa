@@ -43,6 +43,9 @@
         href: "about.html",
         children: [
           { label: t("navHistory"), href: "about.html" },
+          { label: t("navName"), href: "about.html#name" },
+          { label: t("navBattle"), href: "about.html#battle" },
+          { label: t("navSchool"), href: "about.html#school" },
           { label: t("navOpenSpots"), href: "visit.html#open" },
           { label: t("navClosedSpots"), href: "visit.html#closed" },
           { label: t("navMural"), href: "spot.html?id=12" }
@@ -139,6 +142,7 @@
             <h2>${t("navAbout")}</h2>
             <ul>
               <li><a href="about.html">${t("navHistory")}</a></li>
+              <li><a href="about.html#school">${t("navSchool")}</a></li>
               <li><a href="spot.html?id=1">${spots[0] ? spots[0].name : t("statue")}</a></li>
               <li><a href="spot.html?id=7">${t("guideRoom")}</a></li>
               <li><a href="spot.html?id=12">${t("navMural")}</a></li>
