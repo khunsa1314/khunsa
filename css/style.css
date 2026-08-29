@@ -783,6 +783,14 @@ html[lang="en"] .spot-tile .ribbon b {
   max-width: var(--measure);
   margin: 0 auto;
 }
+.article-flow blockquote.history-quote {
+  margin: 0 0 1.25em;
+  padding: 4px 0 4px 18px;
+  border-left: 2px solid var(--copper);
+  color: var(--muted);
+  font-family: "Noto Serif TC", serif;
+}
+.article-flow blockquote.history-quote p { margin: 0; }
 .article-flow h2 {
   position: relative;
   margin: 120px 0 20px;
