@@ -3,34 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>影�?館�??��?紀念館</title>
-  <meta name="description" content="?��?紀念館影�?館�?歷史人�??��??�?��??�相?�影?��??��?>
+  <title>影像館｜昆沙紀念館</title>
+  <meta name="description" content="昆沙紀念館影像館：歷史人像、園區雕像與相關影像紀錄。">
   <link rel="stylesheet" href="css/style.css">
+  <style id="khunsa-critical">.drawer{display:none!important}.drawer.is-open{display:block!important}body{margin:0;background:#f4f0e7;color:#191816;font-family:"Noto Sans TC","Microsoft JhengHei",sans-serif}</style>
 </head>
 <body data-title="galleryTitle">
   <main id="main" class="page">
     <div class="wrap">
       <nav class="crumb" aria-label="breadcrumb">
-        <a href="index.html" data-i18n="crumbHome">首�?</a> / <a href="guide.html" data-i18n="navGuide">?��?導覽</a> / <span data-i18n="galleryTitle">影�?�?/span>
+        <a href="index.html" data-i18n="crumbHome">首頁</a> / <a href="guide.html" data-i18n="navGuide">數位導覽</a> / <span data-i18n="galleryTitle">影像館</span>
       </nav>
       <header class="page-hero">
         <p class="kicker" data-i18n="galleryKicker">ARCHIVE</p>
-        <h1 class="page-title" data-i18n="galleryTitle">影�?�?/h1>
-        <p class="measure" data-i18n="galleryLead">?�館?��??�歷?�影?��?供�?識�??�人物?��??��??��?紀?�。說?�以?�場?��?件為準�?/p>
+        <h1 class="page-title" data-i18n="galleryTitle">影像館</h1>
+        <p class="measure" data-i18n="galleryLead">本館整理的歷史影像，供認識園區人物、雕像與相關紀錄。說明以現場與原件為準。</p>
       </header>
-      <p class="note" data-i18n="galleryNote">?��??�橫式照?�並存。�??�可?�大?��?機為?��?，避?��??��?一?��?/p>
+      <p class="note" data-i18n="galleryNote">直式、橫式照片並存。點選可放大。手機為單欄，避免擠在同一排。</p>
       <div class="archive-grid" id="archive-grid"></div>
     </div>
   </main>
   <dialog class="archive-dialog" id="archive-dialog" aria-labelledby="archive-dialog-title">
     <div class="archive-dialog-bar">
       <p id="archive-dialog-title"></p>
-      <button type="button" class="archive-dialog-close" data-close data-i18n="galleryClose">?��?</button>
+      <button type="button" class="archive-dialog-close" data-close data-i18n="galleryClose">關閉</button>
     </div>
     <div class="archive-dialog-stage">
-      <button type="button" class="archive-nav" data-prev aria-label="上�?�?>??/button>
+      <button type="button" class="archive-nav" data-prev aria-label="上一張">‹</button>
       <img id="archive-dialog-img" alt="">
-      <button type="button" class="archive-nav" data-next aria-label="下�?�?>??/button>
+      <button type="button" class="archive-nav" data-next aria-label="下一張">›</button>
     </div>
   </dialog>
   <script src="js/spots.js"></script>

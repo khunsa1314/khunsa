@@ -80,7 +80,7 @@
           </div>
         </div>
       </header>
-      <nav id="main-nav" class="drawer" aria-label="${t("menu")}">
+      <nav id="main-nav" class="drawer" hidden aria-label="${t("menu")}">
         <button class="drawer-close" type="button">${t("closeMenu")}</button>
         <h2>${t("quickLinks")}</h2>
         <ul>
@@ -181,6 +181,7 @@
     const menuBtn = document.querySelector(".menu-btn");
     if (!nav || !menuBtn) return;
     nav.classList.toggle("is-open", open);
+    nav.hidden = !open;
     menuBtn.setAttribute("aria-expanded", String(open));
     document.body.classList.toggle("is-locked", open);
   }
