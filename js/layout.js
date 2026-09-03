@@ -218,6 +218,11 @@
     window.addEventListener("scroll", onScroll, { passive: true });
 
     const nodes = document.querySelectorAll(".js-reveal");
+    observeReveals(nodes);
+  }
+
+  function observeReveals(nodeList) {
+    const nodes = Array.from(nodeList || []);
     if (!nodes.length) return;
     const markIn = (el) => {
       el.classList.add("is-in");
@@ -247,8 +252,13 @@
     nodes.forEach((el) => {
       if (!el.classList.contains("is-in")) io.observe(el);
     });
-    window.addEventListener("resize", revealVisible, { passive: true });
   }
+
+  window.KHUNSA.observeReveals = function (root) {
+    const scope = root || document;
+    const nodes = scope.querySelectorAll ? scope.querySelectorAll(".js-reveal:not(.is-in)") : [];
+    observeReveals(nodes);
+  };
 
   window.KHUNSA.renderChrome = function renderChrome(opts) {
     const spots = getSpots();

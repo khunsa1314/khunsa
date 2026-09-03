@@ -74,6 +74,7 @@
       <p class="site-statement">${t("siteStatement")}</p>
       <p class="note"><a href="sources.html">${t("navSources")}</a> · <a href="oral-history.html">${t("navOral")}</a> · <a href="contribute.html">${t("navContribute")}</a></p>
     `;
+    if (window.KHUNSA.observeReveals) window.KHUNSA.observeReveals(root);
   }
 
   document.addEventListener("click", (e) => {

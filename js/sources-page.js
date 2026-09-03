@@ -36,4 +36,5 @@
   });
   html += `<p class="site-statement">${t("siteStatement")}</p>`;
   root.innerHTML = html;
+  if (window.KHUNSA.observeReveals) window.KHUNSA.observeReveals(root);
 })();

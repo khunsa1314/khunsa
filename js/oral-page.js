@@ -32,4 +32,5 @@
     ${cards}
     <p class="note"><a href="contribute.html">${t("navContribute")}</a></p>
   `;
+  if (window.KHUNSA.observeReveals) window.KHUNSA.observeReveals(root);
 })();
