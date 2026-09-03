@@ -78,7 +78,9 @@
       aboutCaveP: "請見歷史頁「刑罰與土牢」。",
       aboutKidsDraft: "請見歷史頁「地方教育與少年兵記憶」。",
       aboutViewsP1: "請見歷史頁「國際記載與地方觀點」。",
-      muralCostumeP2: "服飾圖像顯示與地方撣／傣語族群在語言及文化上的關聯；不宜逕寫成與泰族完全相同。"
+      muralCostumeP2: "服飾圖像顯示與地方撣／傣語族群在語言及文化上的關聯；不宜逕寫成與泰族完全相同。",
+      guideHint: "點選周圍入口開始導覽",
+      guideNavLabel: "數位導覽入口"
     },
     th: {
       siteTagline: "ความทรงจำท้องถิ่นและเอกสารประวัติที่นักเรียนโรงเรียนต้าถงบ้านเทอดไทยเรียบเรียง",
@@ -133,7 +135,9 @@
       aboutP1: "โปรดอ่านสรุปในหน้าประวัติ",
       aboutSchoolHonor: "คำเรียกเกียรติบางอย่างเป็นของชาวบ้าน ไม่ใช่คำตัดสินของเว็บ",
       aboutReturnP: "ดูหน้าประวัติ",
-      muralCostumeP2: "เครื่องแต่งกายชี้ความเชื่อมโยงทางภาษาและวัฒนธรรมกับกลุ่มไทใหญ่/ไท ไม่ควรถูกเขียนว่าเป็นชนชาติเดียวกับไทยโดยสิ้นเชิง"
+      muralCostumeP2: "เครื่องแต่งกายชี้ความเชื่อมโยงทางภาษาและวัฒนธรรมกับกลุ่มไทใหญ่/ไท ไม่ควรถูกเขียนว่าเป็นชนชาติเดียวกับไทยโดยสิ้นเชิง",
+      guideHint: "เลือกทางเข้าด้านนอกเพื่อเริ่ม",
+      guideNavLabel: "ทางเข้าชมดิจิทัล"
     },
     en: {
       siteTagline: "Local memory and historical materials organised by students of Datong School, Ban Thoed Thai",
@@ -188,7 +192,9 @@
       aboutP1: "See the student summary on the history page.",
       aboutSchoolHonor: "Honorifics used by some residents are not this site’s verdict. See the history page.",
       aboutReturnP: "See the history page.",
-      muralCostumeP2: "Dress points to language and cultural links with Shan/Tai communities; do not treat them as identical to the Thai nationality."
+      muralCostumeP2: "Dress points to language and cultural links with Shan/Tai communities; do not treat them as identical to the Thai nationality.",
+      guideHint: "Choose a surrounding entrance to begin",
+      guideNavLabel: "Digital guide entrances"
     }
   };
 

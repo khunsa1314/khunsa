@@ -927,6 +927,11 @@
     document.querySelectorAll("[data-i18n-alt]").forEach((el) => {
       el.setAttribute("alt", t(el.getAttribute("data-i18n-alt")));
     });
+    document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+      const num = el.getAttribute("data-aria-num");
+      const label = t(el.getAttribute("data-i18n-aria"));
+      el.setAttribute("aria-label", num ? `${num} ${label}` : label);
+    });
     const titleKey = document.body.getAttribute("data-title");
     if (titleKey === "siteName") document.title = t("siteName");
     else if (titleKey) document.title = t(titleKey) + "｜" + t("siteName");
