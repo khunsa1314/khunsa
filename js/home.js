@@ -1,10 +1,11 @@
 (function () {
   const { renderChrome, getSpots } = window.KHUNSA;
-  const { t } = window.KHUNSA_I18N;
+  const { t, getLang } = window.KHUNSA_I18N;
   renderChrome();
 
   const spots = getSpots();
   const news = t("newsItems") || [];
+  const lang = getLang();
   const spotPhoto = {
     1: "images/photos/18.jpg",
     2: "images/photos/spot-02-cave-a.jpg",
@@ -52,7 +53,7 @@
   if (track) {
     const alt = t("heroAlt");
     track.innerHTML = slides.map((src, i) =>
-      `<figure class="hero-slide${i === 0 ? " is-on" : ""}"><img src="${src}" alt="${alt}"${i === 0 ? "" : ' loading="lazy"'}></figure>`
+      `<figure class="hero-slide${i === 0 ? " is-on" : ""}"><img src="${src}" alt="${i === 0 ? alt : ""}"${i === 0 ? "" : ' loading="lazy"'}></figure>`
     ).join("");
 
     function show(n) {
@@ -123,6 +124,22 @@
           <span class="go" aria-hidden="true">›</span>
         </div>
       </a>`;
+    }).join("");
+  }
+
+  const homeTl = document.getElementById("home-timeline");
+  if (homeTl && window.KHUNSA_TIMELINE) {
+    const pick = ["birth", "1975", "1976", "1982", "1996", "2007"];
+    const tags = window.KHUNSA_TIMELINE.TAGS[lang] || window.KHUNSA_TIMELINE.TAGS.zh;
+    homeTl.innerHTML = pick.map((id) => {
+      const item = window.KHUNSA_TIMELINE.ITEMS.find((x) => x.id === id);
+      if (!item) return "";
+      const tag = tags[item.tag];
+      return `<div class="tl-item">
+        <b>${item.year[lang]}</b>
+        <p>${item.text[lang]}</p>
+        <small class="cred-inline">${tag.label}</small>
+      </div>`;
     }).join("");
   }
 

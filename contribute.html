@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>補充史料｜昆沙紀念館</title>
+  <meta name="description" content="向滿星疊大同中學學生整理團隊補充史料或回報錯誤。提交後須經人工審核，不會自動公開。">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-title="contributeTitle">
+  <main id="main" class="page">
+    <div class="wrap">
+      <nav class="crumb" aria-label="breadcrumb">
+        <a href="index.html" data-i18n="crumbHome">首頁</a> / <span data-i18n="contributeTitle">補充史料／回報錯誤</span>
+      </nav>
+      <header class="page-hero">
+        <h1 class="page-title" data-i18n="contributeTitle">補充史料／回報錯誤</h1>
+        <p class="measure" data-i18n="contributeLead">提交資料不代表網站會直接採用。學生整理團隊將先確認來源、授權及個人資料後再決定是否更新。</p>
+      </header>
+      <form class="contribute-form" id="contribute-form">
+        <label>姓名或匿名 <input name="name" required maxlength="80"></label>
+        <label>聯絡方式（選填） <input name="contact" maxlength="120" type="text" autocomplete="email"></label>
+        <label>要補充的頁面
+          <select name="page">
+            <option value="about.html">歷史沿革</option>
+            <option value="sources.html">資料來源</option>
+            <option value="oral-history.html">口述紀錄</option>
+            <option value="visit.html">參觀資訊</option>
+            <option value="spot">據點頁</option>
+            <option value="other">其他</option>
+          </select>
+        </label>
+        <label>內容 <textarea name="content" required rows="6" maxlength="4000"></textarea></label>
+        <label>資料來源 <textarea name="source" rows="3" maxlength="1000"></textarea></label>
+        <label>照片或文件說明（本示範不上傳檔案） <input name="fileNote" maxlength="200"></label>
+        <label class="check"><input type="checkbox" name="agreePublic"> 是否同意公開摘要（不含敏感個資）</label>
+        <label class="check"><input type="checkbox" name="agreeContact"> 是否願意接受學生聯絡</label>
+        <button type="submit" class="btn btn-solid">送出（示範）</button>
+      </form>
+      <p class="note" id="contribute-msg" hidden></p>
+    </div>
+  </main>
+  <script src="js/spots.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/i18n-patch.js"></script>
+  <script src="js/i18n-spots.js"></script>
+  <script src="js/layout.js"></script>
+  <script>
+    KHUNSA.renderChrome();
+    const form = document.getElementById("contribute-form");
+    const msg = document.getElementById("contribute-msg");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const data = Object.fromEntries(new FormData(form).entries());
+      data.agreePublic = !!form.agreePublic.checked;
+      data.agreeContact = !!form.agreeContact.checked;
+      data.submittedAt = new Date().toISOString();
+      data.status = "pending_review";
+      try {
+        const key = "khunsa-contribute-queue";
+        const queue = JSON.parse(localStorage.getItem(key) || "[]");
+        queue.push(data);
+        localStorage.setItem(key, JSON.stringify(queue));
+      } catch (err) {}
+      msg.hidden = false;
+      msg.textContent = KHUNSA_I18N.t("contributeThanks");
+      form.reset();
+    });
+  </script>
+</body>
+</html>

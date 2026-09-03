@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>搜尋｜昆沙紀念館</title>
-  <meta name="description" content="搜尋昆沙紀念館園區據點與解說。">
+  <meta name="description" content="搜尋昆沙紀念館據點、歷史章節、資料來源與口述紀錄。">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-title="searchTitle">
@@ -21,23 +21,49 @@
   </main>
   <script src="js/spots.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/i18n-patch.js"></script>
   <script src="js/i18n-spots.js"></script>
+  <script src="js/sources-data.js"></script>
+  <script src="js/history-data.js"></script>
+  <script src="js/oral-data.js"></script>
   <script src="js/layout.js"></script>
   <script>
     KHUNSA.renderChrome();
     const t = KHUNSA_I18N.t;
     const format = KHUNSA_I18N.format;
+    const lang = KHUNSA_I18N.getLang();
     const q = (new URLSearchParams(location.search).get("q") || "").trim();
     const box = document.getElementById("results");
+    const needle = q.toLowerCase();
+
+    function hit(type, title, href, summary) {
+      return { type, title, href, summary };
+    }
+
     if (!q) {
       box.innerHTML = "<p>" + t("searchEmpty") + "</p>";
     } else {
-      const found = KHUNSA.getSpots().filter((s) =>
-        [s.name, s.subtitle, s.location, s.summary, ...(s.body || [])].join(" ").toLowerCase().includes(q.toLowerCase())
-      );
+      const found = [];
+      KHUNSA.getSpots().forEach((s) => {
+        const blob = [s.name, s.subtitle, s.location, s.summary, ...(s.body || []), s.originalLabel || ""].join(" ").toLowerCase();
+        if (blob.includes(needle)) found.push(hit(t("searchTypeSpot"), s.name, "spot.html?id=" + s.id, s.summary));
+      });
+      (window.KHUNSA_HISTORY.CHAPTERS || []).forEach((c) => {
+        const blob = [c.title[lang], ...(c.paragraphs[lang] || [])].join(" ").toLowerCase();
+        if (blob.includes(needle)) found.push(hit(t("searchTypeHistory"), c.title[lang], "about.html#" + c.id, (c.paragraphs[lang][0] || "").slice(0, 140) + "…"));
+      });
+      (window.KHUNSA_SOURCES.SOURCES || []).forEach((s) => {
+        const blob = [s.title, s.authors, s.supports, s.note, String(s.year)].join(" ").toLowerCase();
+        if (blob.includes(needle)) found.push(hit(t("searchTypeSource"), "[" + s.id + "] " + s.title, "sources.html#src-" + s.id, s.supports));
+      });
+      (window.KHUNSA_ORAL.RECORDS || []).forEach((r) => {
+        const blob = [r.displayName[lang], r.summary[lang], r.relation[lang]].join(" ").toLowerCase();
+        if (blob.includes(needle)) found.push(hit(t("searchTypeOral"), r.displayName[lang], "oral-history.html#" + r.id, r.summary[lang]));
+      });
+
       box.innerHTML = found.length
         ? "<p>" + format(t("searchCount"), { q: q, n: found.length }) + "</p>" + found.map((s) =>
-            `<article class="search-hit"><a href="spot.html?id=${s.id}">${s.name}</a><br><small>${s.statusLabel}</small><p>${s.summary}</p></article>`
+            `<article class="search-hit"><span class="search-type">${s.type}</span><a href="${s.href}">${s.title}</a><p>${s.summary}</p></article>`
           ).join("")
         : "<p>" + format(t("searchNone"), { q: q }) + "</p>";
     }

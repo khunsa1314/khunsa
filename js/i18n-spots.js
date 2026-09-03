@@ -7,7 +7,7 @@ window.KHUNSA_SPOTS_I18N = {
       location: "Memorial entrance",
       summary: "The park’s most visible landmark. After 2007, villagers had craftsmen cast Khun Sa on horseback in bronze.",
       body: [
-        "The bronze statue of Khun Sa on horseback is the most visible landmark at the entrance. After he died in 2007, local accounts say villagers asked the township head to invite craftsmen from Muse and Namkham. The work took about three months. Two statues were made: one riding, one seated, at a total cost of 80,000.",
+        "The bronze statue of Khun Sa on horseback is the most visible landmark at the entrance. After he died in 2007, local accounts say people in Ban Thoed Thai invited craftsmen from Muse and Namkham. The work took about three months. Two statues were made: one riding, one seated, at a total cost of 80,000.",
         "The statue shows him riding in the Golden Triangle hills. Many visitors take a photograph. Local accounts also treat the statue as a village memory of that period."
       ]
     },
@@ -65,13 +65,14 @@ window.KHUNSA_SPOTS_I18N = {
       ]
     },
     7: {
-      name: "Scout quarters",
-      subtitle: "Old dorm · displays",
+      name: "History display room (original use pending confirmation)",
+      subtitle: "Former dorm area · displays",
       statusLabel: "Open",
       location: "Camp dormitory block",
-      summary: "The rooms where scouts lodged. Inside is a Khun Sa timeline board with old photographs.",
+      summary: "Now used for history boards. Whether it was a scout room, boy-soldier dorm, guard post or something else awaits confirmation; the older Chinese label is kept in the data fields.",
       body: [
-        "These were the camp rooms for scouts, now used to show records. The board covers Khun Sa (about 1964–1996) with historical photographs. Read the board on site. Do not touch exhibits."
+        "On site the room shows timeline boards and old photographs. An older Chinese label called it a scout lodging; until the memorial confirms the original use, the display name is “History display room (original use pending confirmation).”",
+        "Read boards with the history and sources pages. Follow staff; do not touch exhibits."
       ]
     },
     8: {
@@ -133,7 +134,7 @@ window.KHUNSA_SPOTS_I18N = {
       location: "ทางเข้าพิพิธภัณฑ์",
       summary: "จุดเด่นที่สุดของพื้นที่ หลังปี 2007 ชาวบ้านให้ช่างหล่อรูปขุนส่าขี่ม้าด้วยทองสัมฤทธิ์",
       body: [
-        "รูปปั้นทองสัมฤทธิ์ขุนส่าขี่ม้าเป็นจุดเด่นที่สุดที่ทางเข้า หลังเขาถึงแก่อสัญกรรมในปี 2007 ตามคำบอกเล่าท้องถิ่น ชาวบ้านให้กำนันเชิญช่างจากเมืองมาและน้ำคำมาสร้าง งานใช้เวลาประมาณสามเดือน ทำสององค์ ทั้งรูปขี่ม้าและรูปนั่ง รวมค่าใช้จ่ายแปดหมื่น",
+        "รูปปั้นทองสัมฤทธิ์ขุนส่าขี่ม้าเป็นจุดเด่นที่สุดที่ทางเข้า หลังเขาถึงแก่อสัญกรรมในปี 2007 ตามคำบอกเล่าท้องถิ่น คนบ้านเทอดไทยเชิญช่างจากเมืองมาและน้ำคำมาสร้าง งานใช้เวลาประมาณสามเดือน ทำสององค์ ทั้งรูปขี่ม้าและรูปนั่ง รวมค่าใช้จ่ายแปดหมื่น",
         "รูปปั้นแสดงภาพขี่ม้าในเขาสามเหลี่ยมทองคำ ผู้เข้าชมจำนวนมากถ่ายรูป ตามคำบอกเล่าท้องถิ่น รูปปั้นยังเป็นความทรงจำของหมู่บ้านต่อช่วงเวลานั้น"
       ]
     },
@@ -191,23 +192,24 @@ window.KHUNSA_SPOTS_I18N = {
       ]
     },
     7: {
-      name: "ห้องลูกเสือ",
-      subtitle: "หอพักเดิม · จัดแสดงเอกสาร",
+      name: "ห้องจัดแสดงเอกสาร (การใช้เดิมรอยืนยัน)",
+      subtitle: "โซนหอพักเดิม · จัดแสดง",
       statusLabel: "เข้าชมได้",
       location: "โซนหอพักในค่าย",
-      summary: "ห้องที่ลูกเสือเคยพัก ภายในมีแผ่นประวัติขุนส่าและภาพเก่า",
+      summary: "ใช้จัดแสดงแผ่นประวัติในปัจจุบัน การใช้เดิม (ห้องลูกเสือ หอทหารเด็ก ที่ยาม หรืออื่น) รอยืนยันจากทางพิพิธภัณฑ์",
       body: [
-        "ที่นี่เคยเป็นห้องพักลูกเสือ ปัจจุบันจัดแสดงเอกสาร มีแผ่นชีวประวัติขุนส่าราวปี 1964–1996 และภาพประวัติศาสตร์ อ่านตามแผ่นหน้างาน ห้ามจับของจัดแสดง"
+        "ตามสภาพหน้างาน ห้องนี้มีแผ่นประวัติและภาพเก่า ชื่อจีนเดิมเคยเรียกห้องลูกเสือ ก่อนที่ยืนยันการใช้เดิม เว็บใช้ชื่อ「ห้องจัดแสดงเอกสาร (การใช้เดิมรอยืนยัน)」",
+        "อ่านแผ่นคู่กับหน้าประวัติและแหล่งข้อมูล ตามเจ้าหน้าที่ ห้ามจับของจัดแสดง"
       ]
     },
     8: {
-      name: "ที่พักนายทหารคนสนิท",
+      name: "ที่พักนายทหารผู้ช่วย",
       subtitle: "เอกสารและการพักอาศัย",
       statusLabel: "ยังเข้าชมไม่ได้",
-      location: "บ้านนายทหารคนสนิท",
-      summary: "ที่พักนายทหารคนสนิท ภายในมีแผนที่รัฐฉาน เมืองสมัยเจ้าฟ้า และภาพบุคคล",
+      location: "บ้านนายทหารผู้ช่วย",
+      summary: "ที่พักนายทหารผู้ช่วย ภายในมีแผนที่รัฐฉาน เมืองสมัยเจ้าฟ้า และภาพบุคคล",
       body: [
-        "ที่นี่เป็นที่พักนายทหารคนสนิทกองทัพมองไท ใช้จัดการเอกสาร ปัจจุบันมีแผ่นแผนที่เขตการปกครองรัฐฉาน เมืองในสมัยเจ้าฟ้าปี 1910–1959 และภาพบุคคล ยังไม่เปิดให้เข้า ภาพถ่ายแสดงห้องนี้"
+        "ที่นี่เป็นที่พักนายทหารผู้ช่วยของกองทัพมองไท ใช้จัดการเอกสาร ปัจจุบันมีแผ่นแผนที่เขตการปกครองรัฐฉาน เมืองในสมัยเจ้าฟ้าปี 1910–1959 และภาพบุคคล ยังไม่เปิดให้เข้า ภาพถ่ายแสดงห้องนี้"
       ]
     },
     9: {
@@ -225,9 +227,9 @@ window.KHUNSA_SPOTS_I18N = {
       subtitle: "ที่พักและแกนงานทหาร",
       statusLabel: "ไม่เปิดให้เข้า",
       location: "อาคารแกนกลาง",
-      summary: "ที่เขาพัก รับนายทหาร และหารืองานทหาร บ้านเรียบง่ายมาก เมื่อจัดตั้งพิพิธภัณฑ์พยายามคืนผังเดิม",
+      summary: "ป้ายหน้างานเขียนว่า KHUNSA'S BED ROOM ที่พัก มีเตียงไม้ ภาพวาด และเครื่องเรือนเรียบง่าย",
       body: [
-        "ตามคำอธิบายหน้างาน ขณะกองทัพมองไทอยู่ที่บ้านเทอดไทย ที่นี่เป็นห้องหนึ่งที่ขุนส่าพัก รับนายทหาร และหารืองาน บ้านดูเรียบง่ายมาก หลังกองทัพสลาย อาคารร้างนาน เมื่อจัดตั้งพิพิธภัณฑ์พยายามคืนเครื่องเรือนและผังเดิม"
+        "ป้ายไม้หน้างานเขียนว่า «ห้องนอนขุนส่า / KHUNSA'S BED ROOM» ตามคำนำชม นี่คือที่พักของขุนส่า ภายในมีเตียงไม้ ภาพพระราชินีไทย ภาพจับมือในกองทัพ และภาพขี่ม้า ยังไม่เปิดให้เข้าชม"
       ]
     },
     11: {

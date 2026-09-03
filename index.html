@@ -4,10 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>昆沙紀念館</title>
-  <meta name="description" content="滿星疊大同中學學生整理的地方歷史與昆沙紀念館數位導覽：參觀資訊、園區據點與歷史沿革。">
+  <meta name="description" content="由滿星疊大同中學學生整理的地方記憶與歷史資料：昆沙紀念館、園區據點、地方口述與公開文獻對照。">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="home-page" data-title="siteName">
+  <noscript>
+    <div class="wrap noscript-box">
+      <p><strong>昆沙紀念館</strong> — 由滿星疊大同中學學生整理的地方記憶與歷史資料。</p>
+      <p>地址：泰國清萊府滿星疊（Ban Thoed Thai／บ้านเทอดไทย）。預約電話：082-129-2305（傣族語言）／098-807-9227（中泰客服）。</p>
+      <p><a href="about.html">歷史沿革</a> · <a href="visit.html">參觀資訊</a> · <a href="sources.html">資料來源</a></p>
+    </div>
+  </noscript>
   <main id="main">
     <section class="hero" id="stage" aria-roledescription="carousel" aria-label="hero">
       <div class="hero-track" id="stage-track"></div>
@@ -15,10 +22,10 @@
       <div class="hero-copy">
           <p class="hero-kicker" data-i18n="siteEn">KHUN SA MEMORIAL</p>
           <h1 data-i18n="siteName">昆沙紀念館</h1>
-          <p class="hero-lead" data-i18n="slide1Text">入口銅像、土牢、炸彈殘骸、童軍駐房間與壁畫，是目前可以靠近觀看的據點。</p>
+          <p class="hero-lead" data-i18n="heroLeadNew">由滿星疊大同中學學生整理的地方記憶與歷史資料</p>
           <div class="hero-cta">
-            <a class="btn btn-solid" href="#orbit" data-i18n="ctaExplore">探索園區</a>
-            <a class="btn btn-ghost" href="visit.html" data-i18n="ctaVisit">參觀資訊</a>
+            <a class="btn btn-solid" href="guide.html" data-i18n="ctaMemorial">認識紀念館</a>
+            <a class="btn btn-ghost" href="about.html" data-i18n="ctaHistory">閱讀歷史</a>
           </div>
       </div>
       <div class="hero-ui">
@@ -37,16 +44,16 @@
         <span data-i18n="scHours">開放時間</span>
         <small data-i18n="visitHoursShort">請預約</small>
       </a>
-      <a href="map.html">
-        <span data-i18n="scMap">園區地圖</span>
+      <a href="sources.html">
+        <span data-i18n="ctaSources">查看資料來源</span>
         <small>→</small>
       </a>
       <a href="about.html">
         <span data-i18n="scHistory">歷史沿革</span>
         <small>→</small>
       </a>
-      <a href="#news">
-        <span data-i18n="scNews">最新消息</span>
+      <a href="oral-history.html">
+        <span data-i18n="ctaOral">地方口述紀錄</span>
         <small>→</small>
       </a>
       </div>
@@ -57,10 +64,17 @@
         <span class="intro-bg" aria-hidden="true">MEMORIAL</span>
         <div>
           <p class="kicker" data-i18n="siteEn">KHUN SA MEMORIAL</p>
-          <h2 data-i18n="introTitle">滿星疊地方歷史與紀念館</h2>
+          <h2 data-i18n="siteTagline">由滿星疊大同中學學生整理的地方記憶與歷史資料</h2>
           <div class="measure">
-            <p data-i18n="introLead">昆沙紀念館位於泰國清萊府滿星疊（Ban Thoed Thai，舊稱 Ban Hin Taek）。地方華文紀錄稱此地曾是昆沙在泰北安營的基地，也是大同中學所在的村子。</p>
-            <p data-i18n="bioText">本網站由滿星疊大同中學學生整理地方歷史、園區文化與相關史料。</p>
+            <p data-i18n="introLead"></p>
+            <p data-i18n="introP2"></p>
+            <p data-i18n="introP3"></p>
+          </div>
+          <div class="home-gates">
+            <a class="btn btn-line" href="guide.html" data-i18n="ctaMemorial">認識紀念館</a>
+            <a class="btn btn-line" href="about.html" data-i18n="ctaHistory">閱讀歷史</a>
+            <a class="btn btn-line" href="sources.html" data-i18n="ctaSources">查看資料來源</a>
+            <a class="btn btn-line" href="oral-history.html" data-i18n="ctaOral">地方口述紀錄</a>
           </div>
         </div>
         <figure>
@@ -78,7 +92,7 @@
           <p class="kicker" data-i18n="virtEn">Explore the Memorial</p>
           <h2 data-i18n="orbitTitle">虛擬園區</h2>
         <p data-i18n="virtLead">依園區現有內容整理的十二處據點</p>
-          <p data-i18n="mapP">自入口銅像起，依編號走完十二處。綠色編號為目前可參觀，灰色為暫不開放內覽。</p>
+          <p data-i18n="virtMapP">自入口銅像起，依編號走完十二處。深色編號為目前可參觀，灰色為暫不開放內覽。</p>
           <ul class="spot-lines" id="virt-lines"></ul>
           <a class="btn btn-line" href="map.html" data-i18n="viewMap">查看園區地圖</a>
         </div>
@@ -97,7 +111,7 @@
             <div class="ed-copy">
               <p class="kicker" data-i18n="hallKicker">館藏</p>
               <h3 data-i18n="hall1Title">騎馬青銅雕像</h3>
-              <p data-i18n="hall1Text">園區入口最醒目的地標。村民於昆沙先生過世後鑄成馬上英姿，還原他在金三角山區策馬的樣貌。</p>
+              <p data-i18n="hall1Text"></p>
               <a class="more" href="spot.html?id=1" data-i18n="readStory">閱讀故事 →</a>
             </div>
           </article>
@@ -108,7 +122,7 @@
             <div class="ed-copy">
               <p class="kicker" data-i18n="hallKicker">館藏</p>
               <h3 data-i18n="hall2Title">坐像</h3>
-              <p data-i18n="hall2Text">館內坐像呈現日常起居的樸實儀態，與外界對武裝領袖居所的刻板印象不同。</p>
+              <p data-i18n="hall2Text">坐像呈現較為日常的儀態，與外界對武裝領袖的刻板印象不同。多數房舍暫不開放內覽，請以現場說明為準。</p>
               <a class="more" href="spot.html?id=9" data-i18n="readStory">閱讀故事 →</a>
             </div>
           </article>
@@ -119,7 +133,7 @@
             <div class="ed-copy">
               <p class="kicker" data-i18n="hallKicker">館藏</p>
               <h3 data-i18n="hall3Title">騎馬畫像</h3>
-              <p data-i18n="hall3Text">館藏油畫描繪昆沙策馬形象，是紀念館內重要的視覺史料。</p>
+              <p data-i18n="hall3Text">館藏油畫描繪昆沙策馬形象，是園區現有視覺史料之一。年代與來源細節仍待整理。</p>
               <a class="more" href="about.html" data-i18n="readStory">閱讀故事 →</a>
             </div>
           </article>
@@ -140,37 +154,17 @@
       <div class="wrap">
         <p class="kicker" data-i18n="navHistory">歷史沿革</p>
         <h2 data-i18n="timelineTitle">歷史沿革</h2>
-        <div class="timeline">
-          <div class="tl-item">
-            <b data-i18n="tl1960y">1960s</b>
-            <p data-i18n="tl1960"></p>
-          </div>
-          <div class="tl-item">
-            <b data-i18n="tl1975y">1975</b>
-            <p data-i18n="tl1975"></p>
-          </div>
-          <div class="tl-item">
-            <b data-i18n="tl1982y">1982</b>
-            <p data-i18n="tl1982"></p>
-          </div>
-          <div class="tl-item">
-            <b data-i18n="tl1993y">1993</b>
-            <p data-i18n="tl1993"></p>
-          </div>
-          <div class="tl-item">
-            <b data-i18n="tl2007y">2007</b>
-            <p data-i18n="tl2007"></p>
-          </div>
-        </div>
-        <a class="btn btn-line" href="about.html" data-i18n="readHistory">閱讀完整歷史</a>
+        <p class="note" data-i18n="tlNote">完整時間軸見歷史頁；此處為摘要。</p>
+        <div class="timeline" id="home-timeline"></div>
+        <a class="btn btn-line" href="about.html#timeline-full" data-i18n="readHistory">閱讀完整歷史</a>
       </div>
     </section>
 
     <section class="section js-reveal" id="route-home">
       <div class="wrap">
         <p class="kicker" data-i18n="recTitle">建議行程</p>
-        <h2 data-i18n="visitRouteH">建議行程</h2>
-        <p data-i18n="rec1">半日開放路線：銅像 → 土牢 → 炸彈殘骸 → 導覽室 → 壁畫</p>
+        <h2 data-i18n="visitRouteH">建議參觀路線</h2>
+        <p data-i18n="rec1">建議參觀路線：銅像 → 土牢 → 炸彈殘骸 → 史料展示室 → 壁畫</p>
         <div class="route" id="home-route"></div>
         <p><a href="map.html" data-i18n="rec2">十二處據點編號地圖</a></p>
         <p><a href="visit.html#rules" data-i18n="rec3">遊園須知：不進入暫不開放房舍</a></p>
@@ -180,34 +174,37 @@
 
     <section class="section js-reveal" id="news">
       <div class="wrap">
-        <p class="kicker" data-i18n="newsKicker">NEWS</p>
-        <h2 data-i18n="newsTitle">園內情報</h2>
+        <p class="kicker" data-i18n="newsKicker">NOTES</p>
+        <h2 data-i18n="newsTitle">園區資訊與史料選讀</h2>
         <div class="news-layout">
           <article class="news-feature">
-            <a href="about.html">
+            <a href="about.html#limits">
               <img src="images/photos/01.jpg" alt="" data-i18n-alt="newsFeatureTitle" loading="lazy">
             </a>
             <p class="kicker" data-i18n="newsFeatureKicker">歷史影像</p>
-            <h3 data-i18n="newsFeatureTitle">歷史影像中的隊列</h3>
-            <p data-i18n="newsFeatureText">滿星疊營地曾是蒙傣軍駐紮與整訓之地。這張隊列照片留下官兵列隊、山林為幕的現場尺度，也說明今日紀念館何以沿著舊日營區動線開放參觀。</p>
+            <h3 data-i18n="newsFeatureTitle">園區保存的武裝人員隊列照片</h3>
+            <p data-i18n="newsFeatureText"></p>
             <a class="more" href="about.html" data-i18n="readMore">閱讀全文</a>
           </article>
           <div>
-            <h3 data-i18n="newsUpdates">園區動態</h3>
+            <h3 data-i18n="newsUpdates">據點與史料選讀</h3>
             <div class="news-list" id="news-list"></div>
             <p><a class="btn btn-line" href="archive.html" data-i18n="navGallery">影像館</a></p>
-            <p data-i18n="newsU1">目前可參觀五處：銅像、土牢、炸彈殘骸、導覽室、壁畫</p>
-            <p data-i18n="newsU2">客房、餐廳、宿舍、副官住所、會客室、臥室、禪房暫不內覽</p>
-            <p data-i18n="newsU3">童軍駐房間現陳列撣邦地圖、老照片與昆沙生平展板</p>
+            <p data-i18n="newsU1">目前可參觀五處：銅像、土牢、炸彈殘骸、史料展示室、壁畫</p>
+            <p data-i18n="newsU2">客房、餐廳、宿舍、副官駐所、會客室、臥室、禪房暫不內覽</p>
+            <p data-i18n="newsU3">史料展示室現陳列展板與老照片；原始用途待館方確認</p>
           </div>
         </div>
+        <p class="site-statement" data-i18n="siteStatement"></p>
       </div>
     </section>
   </main>
 
   <script src="js/spots.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/i18n-patch.js"></script>
   <script src="js/i18n-spots.js"></script>
+  <script src="js/timeline-data.js"></script>
   <script src="js/layout.js"></script>
   <script src="js/home.js"></script>
 </body>

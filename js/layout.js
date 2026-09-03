@@ -68,8 +68,8 @@
             <li><a href="guide.html">${t("navGuide")}</a></li>
             <li><a href="visit.html">${t("navVisit")}</a></li>
             <li><a href="map.html">${t("navMap")}</a></li>
-            <li><a href="index.html#news">${t("navNews")}</a></li>
             <li><a href="about.html">${t("navHistory")}</a></li>
+            <li><a href="sources.html">${t("navSources")}</a></li>
           </ul>
           <div class="nav-tools">
             <a class="search-link" href="search.html">${t("search")}</a>
@@ -89,8 +89,11 @@
           <li><a href="visit.html#status">${t("navStatus")}</a></li>
           <li><a href="map.html">${t("navMap")}</a></li>
           <li><a href="archive.html">${t("navGallery")}</a></li>
-          <li><a href="index.html#news">${t("navNews")}</a></li>
           <li><a href="about.html">${t("navHistory")}</a></li>
+          <li><a href="sources.html">${t("navSources")}</a></li>
+          <li><a href="oral-history.html">${t("navOral")}</a></li>
+          <li><a href="contribute.html">${t("navContribute")}</a></li>
+          <li><a href="index.html#news">${t("newsTitle")}</a></li>
           <li><a href="visit.html#route">${t("navRoute")}</a></li>
           <li><a href="visit.html#rules">${t("navRules")}</a></li>
           <li><a href="sitemap.html">${t("sitemap")}</a></li>
@@ -123,8 +126,10 @@
               <li><a href="visit.html">${t("navVisit")}</a></li>
               <li><a href="map.html">${t("navMap")}</a></li>
               <li><a href="about.html">${t("navHistory")}</a></li>
+              <li><a href="sources.html">${t("navSources")}</a></li>
+              <li><a href="oral-history.html">${t("navOral")}</a></li>
               <li><a href="archive.html">${t("navGallery")}</a></li>
-              <li><a href="index.html#news">${t("navNews")}</a></li>
+              <li><a href="contribute.html">${t("navContribute")}</a></li>
             </ul>
           </div>
           <div>
@@ -140,19 +145,27 @@
           <div>
             <h2>${t("navAbout")}</h2>
             <ul>
-              <li><a href="about.html#place">${t("navHistory")}</a></li>
+              <li><a href="about.html">${t("navHistory")}</a></li>
+              <li><a href="about.html#name">${t("navName")}</a></li>
               <li><a href="about.html#school">${t("navSchool")}</a></li>
-              <li><a href="about.html#cave">${t("aboutCaveH")}</a></li>
-              <li><a href="about.html#battle">${t("navBattle")}</a></li>
-              <li><a href="about.html#sites">${t("aboutSitesH")}</a></li>
+              <li><a href="about.html#battle">${langSafe("battle")}</a></li>
+              <li><a href="about.html#views">${langSafe("views")}</a></li>
+              <li><a href="sources.html">${t("navSources")}</a></li>
             </ul>
           </div>
         </div>
+        <p class="wrap site-statement foot-statement">${t("siteStatement")}</p>
         <div class="wrap foot-meta">
           <span>${t("footerBrand")}</span>
           <span>${t("footerUpdated")}</span>
         </div>
       </footer>`;
+  }
+
+  function langSafe(key) {
+    if (key === "battle") return getLang() === "en" ? "1982 operations" : getLang() === "th" ? "ปฏิบัติการ 1982" : "1982年記事";
+    if (key === "views") return getLang() === "en" ? "International and local views" : getLang() === "th" ? "มุมมองระหว่างประเทศและท้องถิ่น" : "國際記載與地方觀點";
+    return key;
   }
 
   function applyFont(size) {
@@ -236,13 +249,78 @@
     window.addEventListener("resize", revealVisible, { passive: true });
   }
 
-  window.KHUNSA.renderChrome = function renderChrome() {
+  window.KHUNSA.renderChrome = function renderChrome(opts) {
     const spots = getSpots();
     document.body.insertAdjacentHTML("afterbegin", headerHtml(spots));
     document.body.insertAdjacentHTML("beforeend", footerHtml());
     bindChrome();
     applyPage();
+    injectPageMeta(opts || {});
   };
+
+  function injectPageMeta(opts) {
+    const title = document.title || t("siteName");
+    const desc =
+      opts.description ||
+      (document.querySelector('meta[name="description"]') && document.querySelector('meta[name="description"]').content) ||
+      t("siteTagline");
+    const url = location.href.split("#")[0].split("?")[0];
+    const image = new URL(opts.image || "images/photos/memorial-hall.jpg", location.href).href;
+
+    ensureLink("canonical", url);
+    ensureMeta("property", "og:title", title);
+    ensureMeta("property", "og:description", desc);
+    ensureMeta("property", "og:type", "website");
+    ensureMeta("property", "og:url", url);
+    ensureMeta("property", "og:image", image);
+    ensureMeta("name", "twitter:card", "summary_large_image");
+    ensureMeta("name", "twitter:title", title);
+    ensureMeta("name", "twitter:description", desc);
+    ensureMeta("name", "twitter:image", image);
+
+    if (!document.getElementById("khunsa-jsonld")) {
+      const script = document.createElement("script");
+      script.type = "application/ld+json";
+      script.id = "khunsa-jsonld";
+      script.textContent = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": ["Museum", "TouristAttraction"],
+        name: t("siteName"),
+        alternateName: "KHUN SA MEMORIAL",
+        description: t("siteTagline"),
+        url: url.replace(/[^/]+$/, "") || url,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: "Ban Thoed Thai",
+          addressRegion: "Chiang Rai",
+          addressCountry: "TH"
+        },
+        telephone: ["+66-82-129-2305", "+66-98-807-9227"],
+        inLanguage: ["zh-Hant", "th", "en"]
+      });
+      document.head.appendChild(script);
+    }
+  }
+
+  function ensureMeta(attr, key, value) {
+    let el = document.head.querySelector(`meta[${attr}="${key}"]`);
+    if (!el) {
+      el = document.createElement("meta");
+      el.setAttribute(attr, key);
+      document.head.appendChild(el);
+    }
+    el.setAttribute("content", value);
+  }
+
+  function ensureLink(rel, href) {
+    let el = document.head.querySelector(`link[rel="${rel}"]`);
+    if (!el) {
+      el = document.createElement("link");
+      el.rel = rel;
+      document.head.appendChild(el);
+    }
+    el.href = href;
+  }
 
   window.KHUNSA.icon = function icon(name) {
     const stroke = "#fff";

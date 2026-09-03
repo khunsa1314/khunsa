@@ -4,10 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>參觀資訊｜昆沙紀念館</title>
-  <meta name="description" content="昆沙紀念館參觀資訊：開放狀態、建議行程與遊園須知。">
+  <meta name="description" content="昆沙紀念館參觀資訊：開放狀態、建議路線與遊園須知。請以現場公告為準。">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body data-title="visitTitle">
+  <noscript>
+    <div class="wrap noscript-box">
+      <p>參觀前請預約：082-129-2305／098-807-9227。開放範圍以現場為準。</p>
+    </div>
+  </noscript>
   <main id="main" class="page">
     <div class="wrap">
       <nav class="crumb" aria-label="breadcrumb">
@@ -16,22 +21,24 @@
       <header class="page-hero">
         <p class="kicker" data-i18n="visitKicker">VISIT</p>
         <h1 class="page-title" data-i18n="visitTitle">參觀資訊</h1>
+        <p class="note" id="visit-confirm-line"></p>
       </header>
       <figure class="page-hero-img">
         <img src="images/photos/18.jpg" alt="" data-i18n-alt="hall1Title">
       </figure>
       <section id="status" class="js-reveal">
         <h2 data-i18n="visitStatusH">開放狀態</h2>
-        <p class="measure" data-i18n="visitStatusP">園區十二處據點並非全部開放內覽。目前可靠近觀看的是戶外地標、遺跡與導覽室；多數舊時內室僅能從外側辨認位置。</p>
+        <p class="measure" data-i18n="visitStatusP">園區十二處據點並非全部開放內覽。目前可靠近觀看的是戶外地標、遺跡與史料展示室；多數舊時內室僅能從外側辨認位置。</p>
         <section id="hours" aria-labelledby="hours-h">
           <h3 id="hours-h" data-i18n="visitHoursH">開放時間</h3>
-          <p class="measure" data-i18n="visitHoursP">開放時間不固定；可提前一天預約。</p>
+          <p class="measure" data-i18n="visitHoursP">園區開放時間可能依現場管理情況調整，建議參觀前一天先行聯絡。實際開放範圍及導覽安排，以館方當日說明為準。</p>
           <dl class="hours-box">
             <dt data-i18n="visitHoursManager">管理人員</dt>
             <dd><a href="tel:+66821292305">082-129-2305</a> <span data-i18n="visitHoursManagerLang">（傣族語言）</span></dd>
             <dt data-i18n="visitHoursService">中泰客服</dt>
             <dd><a href="tel:+66988079227">098-807-9227</a></dd>
           </dl>
+          <p class="note">資料提供者：館方聯絡窗口（學生整理）。今日是否仍適用：請以現場公告為準。</p>
         </section>
         <div class="status-grid">
           <div class="status-col" id="open">
@@ -46,8 +53,8 @@
       </section>
 
       <section id="route" class="js-reveal">
-        <h2 data-i18n="visitRouteH">建議行程</h2>
-        <p data-i18n="visitRouteP">若時間有限，建議走半日開放路線：</p>
+        <h2 data-i18n="visitRouteH">建議參觀路線</h2>
+        <p data-i18n="visitRouteP">若時間有限，建議走以下開放路線：</p>
         <div class="route" id="route-line"></div>
         <p data-i18n="visitRouteMap">十二處據點的編號與相對位置，請見園區地圖。此為目前園區導覽整理，並非歷史上固定的正式名稱。</p>
         <p><a class="btn btn-line" href="map.html" data-i18n="viewMap">查看園區地圖</a></p>
@@ -58,8 +65,8 @@
         <ol class="rules">
           <li data-i18n="visitR1">暫不開放的房舍請勿擅自進入，尊重現場管理。</li>
           <li data-i18n="visitR2">土牢陰暗潮濕，靠近時請注意步履與光線。</li>
-          <li data-i18n="visitR3">銅像為村民集資鑄造的紀念物，拍照時請勿攀爬。</li>
-          <li data-i18n="visitR4">導覽室為解說主要空間，陳列老照片與史料，請依人員引導瀏覽。</li>
+          <li data-i18n="visitR3">銅像為紀念性雕像，拍照時請勿攀爬。</li>
+          <li data-i18n="visitR4">史料展示室現有史料展板，請依現場引導瀏覽，勿觸碰展品。</li>
           <li data-i18n="visitR5">開放狀態以館方當日公告為準。</li>
         </ol>
       </section>
@@ -67,10 +74,15 @@
   </main>
   <script src="js/spots.js"></script>
   <script src="js/i18n.js"></script>
+  <script src="js/i18n-patch.js"></script>
   <script src="js/i18n-spots.js"></script>
   <script src="js/layout.js"></script>
   <script>
     KHUNSA.renderChrome();
+    const t = KHUNSA_I18N.t;
+    const lang = KHUNSA_I18N.getLang();
+    const conf = KHUNSA_I18N.formatDisplayDate(KHUNSA_DATES.visitConfirmedISO, lang);
+    document.getElementById("visit-confirm-line").textContent = t("visitConfirmLabel") + "：" + conf;
     const spots = KHUNSA.getSpots();
     function list(el, items) {
       el.innerHTML = items.map((s) =>
