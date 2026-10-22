@@ -23,20 +23,22 @@
       <section class="digital-guide js-reveal is-in" aria-labelledby="guide-title">
         <nav class="guide-map" data-i18n-aria="guideNavLabel" aria-label="數位導覽入口">
           <svg class="guide-connections" viewBox="0 0 100 100" preserveAspectRatio="xMidYMid meet" aria-hidden="true" focusable="false">
-            <circle cx="50" cy="50" r="28" fill="none" stroke="currentColor" stroke-width="0.25" opacity="0.4"/>
-            <circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="0.2" opacity="0.28"/>
-            <g class="guide-connections__rays" fill="none" stroke="currentColor" stroke-width="0.28" opacity="0.32">
+            <circle class="guide-connections__ring" cx="50" cy="50" r="22" fill="none" stroke="currentColor" stroke-width="0.22"/>
+            <circle class="guide-connections__ring" cx="50" cy="50" r="36" fill="none" stroke="currentColor" stroke-width="0.18"/>
+            <circle class="guide-connections__ring" cx="50" cy="50" r="46" fill="none" stroke="currentColor" stroke-width="0.14"/>
+            <g class="guide-connections__rays" fill="none" stroke="currentColor" stroke-width="0.26" stroke-linecap="round">
               <line x1="50" y1="50" x2="16.7" y2="16.7"/>
-              <line x1="50" y1="50" x2="50" y2="16.7"/>
+              <line x1="50" y1="50" x2="50" y2="14"/>
               <line x1="50" y1="50" x2="83.3" y2="16.7"/>
-              <line x1="50" y1="50" x2="83.3" y2="50"/>
+              <line x1="50" y1="50" x2="86" y2="50"/>
               <line x1="50" y1="50" x2="83.3" y2="83.3"/>
-              <line x1="50" y1="50" x2="50" y2="83.3"/>
+              <line x1="50" y1="50" x2="50" y2="86"/>
               <line x1="50" y1="50" x2="16.7" y2="83.3"/>
-              <line x1="50" y1="50" x2="16.7" y2="50"/>
+              <line x1="50" y1="50" x2="14" y2="50"/>
             </g>
           </svg>
 
+          <!-- DOM order = Tab 01–08; CSS Grid places them around the hub -->
           <a class="guide-node guide-node--1" href="index.html#orbit" data-i18n-aria="gOrbit" data-aria-num="01" aria-label="01 虛擬園區">
             <span class="guide-node__surface">
               <span class="guide-node__num" aria-hidden="true">01</span>
@@ -73,6 +75,15 @@
             </span>
           </a>
 
+          <div class="guide-hub">
+            <figure class="guide-hub__media">
+              <img src="images/hero.jpg" alt="昆沙紀念館" data-i18n-alt="heroAlt" width="760" height="475">
+            </figure>
+            <p class="guide-hub__name" data-i18n="guideCenter">昆沙紀念館</p>
+            <p class="guide-hub__en" data-i18n="siteEn">KHUN SA MEMORIAL</p>
+            <p class="guide-hub__hint" data-i18n="guideHint">點選周圍入口開始導覽</p>
+          </div>
+
           <a class="guide-node guide-node--5" href="about.html" data-i18n-aria="gHistory" data-aria-num="05" aria-label="05 歷史沿革">
             <span class="guide-node__surface">
               <span class="guide-node__num" aria-hidden="true">05</span>
@@ -108,15 +119,6 @@
               <em data-i18n="gAboutEn">About</em>
             </span>
           </a>
-
-          <div class="guide-hub">
-            <figure class="guide-hub__media">
-              <img src="images/hero.jpg" alt="" data-i18n-alt="heroAlt" width="760" height="475">
-            </figure>
-            <p class="guide-hub__name" data-i18n="guideCenter">昆沙紀念館</p>
-            <p class="guide-hub__en" data-i18n="siteEn">KHUN SA MEMORIAL</p>
-            <p class="guide-hub__hint" data-i18n="guideHint">點選周圍入口開始導覽</p>
-          </div>
         </nav>
       </section>
     </div>
