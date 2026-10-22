@@ -66,6 +66,7 @@
           </a>
           <ul class="nav-links">
             <li><a href="guide.html">${t("navGuide")}</a></li>
+            <li><a href="game.html">${t("navGame")}</a></li>
             <li><a href="visit.html">${t("navVisit")}</a></li>
             <li><a href="map.html">${t("navMap")}</a></li>
             <li><a href="about.html">${t("navHistory")}</a></li>
@@ -85,6 +86,7 @@
         <h2>${t("quickLinks")}</h2>
         <ul>
           <li><a href="guide.html">${t("navGuide")}</a></li>
+          <li><a href="game.html">${t("navGame")}</a></li>
           <li><a href="visit.html">${t("navVisit")}</a></li>
           <li><a href="visit.html#status">${t("navStatus")}</a></li>
           <li><a href="map.html">${t("navMap")}</a></li>
@@ -123,6 +125,7 @@
             <h2>${t("quickLinks")}</h2>
             <ul>
               <li><a href="guide.html">${t("navGuide")}</a></li>
+              <li><a href="game.html">${t("navGame")}</a></li>
               <li><a href="visit.html">${t("navVisit")}</a></li>
               <li><a href="map.html">${t("navMap")}</a></li>
               <li><a href="about.html">${t("navHistory")}</a></li>

@@ -80,7 +80,14 @@
       aboutViewsP1: "請見歷史頁「國際記載與地方觀點」。",
       muralCostumeP2: "服飾圖像顯示與地方撣／傣語族群在語言及文化上的關聯；不宜逕寫成與泰族完全相同。",
       guideHint: "點選周圍入口開始導覽",
-      guideNavLabel: "數位導覽入口"
+      guideNavLabel: "數位導覽入口",
+      navGame: "互動遊戲",
+      gameTitle: "滿星疊・記憶之路",
+      gameHomeKicker: "INTERACTIVE",
+      gameHomeTitle: "開始記憶之旅",
+      gameHomeLead: "扮演虛構旅人，在有限時間與體力下探索可參觀據點，蒐集地方記憶線索。歷史說明引用本站既有資料；遊戲情境另行標示。",
+      gameHomeTime: "預估 8–15 分鐘",
+      gameStartCta: "開始記憶之旅"
     },
     th: {
       siteTagline: "ความทรงจำท้องถิ่นและเอกสารประวัติที่นักเรียนโรงเรียนต้าถงบ้านเทอดไทยเรียบเรียง",
@@ -137,7 +144,14 @@
       aboutReturnP: "ดูหน้าประวัติ",
       muralCostumeP2: "เครื่องแต่งกายชี้ความเชื่อมโยงทางภาษาและวัฒนธรรมกับกลุ่มไทใหญ่/ไท ไม่ควรถูกเขียนว่าเป็นชนชาติเดียวกับไทยโดยสิ้นเชิง",
       guideHint: "เลือกทางเข้าด้านนอกเพื่อเริ่ม",
-      guideNavLabel: "ทางเข้าชมดิจิทัล"
+      guideNavLabel: "ทางเข้าชมดิจิทัล",
+      navGame: "เกมเชิงโต้ตอบ",
+      gameTitle: "เส้นทางความทรงจำบ้านเทอดไทย",
+      gameHomeKicker: "INTERACTIVE",
+      gameHomeTitle: "เริ่มเส้นทางความทรงจำ",
+      gameHomeLead: "เล่นเป็นนักเดินทางสมมติ สำรวจจุดที่เข้าชมได้ด้วยเวลาและแรงจำกัด เก็บเบาะแสความทรงจำท้องถิ่น เนื้อประวัติอ้างจากเว็บนี้ เหตุการณ์เกมติดป้ายสมมติ",
+      gameHomeTime: "ประมาณ 8–15 นาที",
+      gameStartCta: "เริ่มเส้นทางความทรงจำ"
     },
     en: {
       siteTagline: "Local memory and historical materials organised by students of Datong School, Ban Thoed Thai",
@@ -194,7 +208,14 @@
       aboutReturnP: "See the history page.",
       muralCostumeP2: "Dress points to language and cultural links with Shan/Tai communities; do not treat them as identical to the Thai nationality.",
       guideHint: "Choose a surrounding entrance to begin",
-      guideNavLabel: "Digital guide entrances"
+      guideNavLabel: "Digital guide entrances",
+      navGame: "Interactive game",
+      gameTitle: "Ban Thoed Thai · Road of Memory",
+      gameHomeKicker: "INTERACTIVE",
+      gameHomeTitle: "Begin the memory journey",
+      gameHomeLead: "Play a fictional traveler exploring open stops with limited time and energy. History lines cite this site; game scenes are marked as fiction.",
+      gameHomeTime: "About 8–15 minutes",
+      gameStartCta: "Begin the memory journey"
     }
   };
 

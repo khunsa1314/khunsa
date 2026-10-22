@@ -1,0 +1,335 @@
+/* 滿星疊・記憶之路 — scoped to .game-page */
+.game-page {
+  background:
+    radial-gradient(circle at 20% 0%, rgba(167, 122, 68, 0.1), transparent 40%),
+    repeating-linear-gradient(-16deg, rgba(90, 70, 40, 0.03) 0 2px, transparent 2px 10px),
+    var(--ivory);
+}
+
+.game-page .mg-shell {
+  max-width: 880px;
+  margin: 0 auto 48px;
+}
+
+.game-page .mg-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding: 12px 14px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255, 252, 246, 0.85);
+}
+
+.game-page .mg-res {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+  font-size: 0.92rem;
+}
+
+.game-page .mg-res strong {
+  color: var(--copper-text);
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.game-page .mg-panel {
+  padding: clamp(16px, 3vw, 28px);
+  border: 1px solid rgba(122, 96, 62, 0.28);
+  border-radius: 18px;
+  background: rgba(250, 248, 243, 0.92);
+  box-shadow: 0 10px 28px rgba(24, 35, 29, 0.05);
+}
+
+.game-page .mg-panel h1,
+.game-page .mg-panel h2 {
+  margin-top: 0;
+}
+
+.game-page .mg-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.game-page .mg-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.game-page .mg-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  min-height: 44px;
+  padding: 14px;
+  text-align: left;
+  color: inherit;
+  border: 1px solid rgba(122, 96, 62, 0.3);
+  border-radius: 14px;
+  background: rgba(255, 252, 246, 0.7);
+  cursor: pointer;
+  transition: border-color 160ms ease, background-color 160ms ease, transform 160ms ease;
+}
+
+.game-page .mg-card strong { font-size: 1.05rem; }
+.game-page .mg-card span { color: var(--muted); font-size: 0.92rem; line-height: 1.5; }
+.game-page .mg-card em {
+  font-style: normal;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  color: var(--copper-text);
+}
+
+.game-page .mg-card.is-on {
+  border-color: var(--copper);
+  background: rgba(244, 232, 208, 0.65);
+}
+
+.game-page .mg-card:focus-visible,
+.game-page .mg-choice:focus-visible,
+.game-page .mg-btn:focus-visible {
+  outline: 2px solid var(--copper);
+  outline-offset: 3px;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .game-page .mg-card:hover,
+  .game-page .mg-choice:hover {
+    transform: translateY(-2px);
+    border-color: rgba(167, 122, 68, 0.55);
+  }
+}
+
+.game-page .mg-path {
+  list-style: none;
+  margin: 16px 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  position: relative;
+}
+
+.game-page .mg-path::before {
+  content: "";
+  position: absolute;
+  left: 28px;
+  top: 12px;
+  bottom: 12px;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(167, 122, 68, 0.55), rgba(122, 96, 62, 0.15));
+}
+
+.game-page .mg-stop {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0 12px 8px;
+}
+
+.game-page .mg-stop-body {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 12px;
+  align-items: center;
+  min-width: 0;
+}
+
+.game-page .mg-stop img,
+.game-page .mg-gate-mark {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  object-fit: cover;
+  border: 2px solid rgba(122, 96, 62, 0.35);
+  background: #ebe4d6;
+  z-index: 1;
+}
+
+.game-page .mg-gate-mark {
+  display: grid;
+  place-items: center;
+  color: var(--copper-text);
+  font-size: 1.1rem;
+}
+
+.game-page .mg-stop strong { display: block; overflow-wrap: anywhere; }
+.game-page .mg-stop small { display: block; color: var(--muted); font-size: 0.82rem; }
+.game-page .mg-stop em {
+  display: inline-block;
+  margin-top: 4px;
+  font-style: normal;
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: var(--copper-text);
+}
+
+.game-page .mg-stop.is-done img { opacity: 0.85; border-color: var(--forest-2); }
+.game-page .mg-stop.is-here .mg-stop-body { background: rgba(167, 122, 68, 0.08); border-radius: 12px; padding: 6px; }
+.game-page .mg-stop.is-locked { opacity: 0.55; }
+.game-page .mg-stop.is-open em { color: #2f5d3f; }
+
+.game-page .mg-scene {
+  margin: 0 0 14px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(122, 96, 62, 0.25);
+}
+
+.game-page .mg-scene img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.game-page .mg-scene figcaption {
+  padding: 8px 12px;
+  font-size: 0.88rem;
+  background: rgba(244, 240, 231, 0.95);
+}
+
+.game-page .mg-tag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(122, 96, 62, 0.35);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--copper-text);
+  background: rgba(255, 252, 246, 0.9);
+}
+
+.game-page .mg-choices {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.game-page .mg-choice {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  width: 100%;
+  min-height: 44px;
+  padding: 12px 14px;
+  text-align: left;
+  color: inherit;
+  border: 1px solid rgba(122, 96, 62, 0.32);
+  border-radius: 12px;
+  background: rgba(255, 252, 246, 0.75);
+  cursor: pointer;
+}
+
+.game-page .mg-choice small { color: var(--muted); }
+
+.game-page .mg-choice:active {
+  background: rgba(244, 232, 208, 0.85);
+  border-color: var(--copper);
+}
+
+.game-page .mg-feedback,
+.game-page .mg-clues {
+  padding-left: 1.2em;
+}
+
+.game-page .mg-note {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: rgba(24, 35, 29, 0.45);
+}
+
+.game-page .mg-note-inner {
+  width: min(640px, 100%);
+  max-height: min(86vh, 820px);
+  overflow: auto;
+  padding: 18px;
+  border-radius: 16px;
+  background: var(--paper);
+  border: 1px solid rgba(122, 96, 62, 0.3);
+}
+
+.game-page .mg-note-inner header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.game-page .mg-note-inner h2 { margin: 0; }
+
+.home-game {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background:
+    linear-gradient(90deg, rgba(167, 122, 68, 0.08), transparent 40%),
+    var(--ivory);
+}
+
+.home-game .home-game-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.9fr);
+  gap: clamp(20px, 4vw, 40px);
+  align-items: center;
+}
+
+.home-game .home-game-visual {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(122, 96, 62, 0.28);
+  box-shadow: 0 12px 28px rgba(24, 35, 29, 0.08);
+}
+
+.home-game .home-game-visual img {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+}
+
+.home-game .home-game-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 14px;
+  margin: 12px 0 18px;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .home-game .home-game-grid {
+    grid-template-columns: 1fr;
+  }
+  .game-page .mg-path::before { left: 22px; }
+  .game-page .mg-stop {
+    grid-template-columns: 1fr;
+  }
+  .game-page .mg-stop .btn { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .game-page .mg-card,
+  .game-page .mg-choice {
+    transition: none;
+  }
+  .game-page .mg-card:hover,
+  .game-page .mg-choice:hover {
+    transform: none;
+  }
+}
