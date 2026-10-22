@@ -6,8 +6,8 @@
   const L = (zh, th, en) => ({ zh, th, en });
 
   window.KHUNSA_GAME = {
-    SAVE_KEY: "khunsa-memory-road-v1",
-    VERSION: 1,
+    SAVE_KEY: "khunsa-memory-road-v2",
+    VERSION: 2,
     START_TIME: 120,
     START_ENERGY: 120,
     TRAVEL_TIME: 8,
@@ -705,7 +705,101 @@
       gate: L("園區入口", "ทางเข้าสวน", "Park gate"),
       pickTwo: L("請選擇正好兩件物品", "เลือกให้ครบ 2 ชิ้น", "Please select exactly two items"),
       busy: L("處理中…", "กำลังดำเนินการ…", "Working…"),
-      resourceNote: L("時間與體力為遊戲抽象資源（初始各120），不代表真實參觀時數或身體狀況。", "เวลาและพลังเป็นทรัพยากรในเกม (เริ่มอย่างละ 120) ไม่ใช่ชั่วโมงจริงหรือร่างกาย", "Time and energy are abstract game resources (start at 120 each), not real visit hours or health.")
+      resourceNote: L("時間與體力為遊戲抽象資源（初始各120），不代表真實參觀時數或身體狀況。", "เวลาและพลังเป็นทรัพยากรในเกม (เริ่มอย่างละ 120) ไม่ใช่ชั่วโมงจริงหรือร่างกาย", "Time and energy are abstract game resources (start at 120 each), not real visit hours or health."),
+      skip: L("跳過", "ข้าม", "Skip"),
+      interact: L("查看", "ดู", "Inspect"),
+      walkHint: L("點擊地面移動；靠近標記後點擊互動", "แตะพื้นเพื่อเดิน ใกล้ป้ายแล้วแตะเพื่อโต้ตอบ", "Tap the ground to walk; tap a marker to interact"),
+      mapBtn: L("地圖", "แผนที่", "Map"),
+      packBtn: L("行囊", "สัมภาระ", "Pack"),
+      audioOn: L("音效：開", "เสียง: เปิด", "Sound: on"),
+      audioOff: L("音效：關", "เสียง: ปิด", "Sound: off"),
+      sceneLabel: L("示意場景", "ฉากจำลอง", "Illustrated scene"),
+      loading: L("載入旅程…", "กำลังโหลด…", "Loading journey…"),
+      retry: L("重試", "ลองใหม่", "Retry"),
+      arrive: L("抵達", "ถึงแล้ว", "Arrived"),
+      approach: L("走近查看", "เดินเข้าไปดู", "Walk closer"),
+      openEvent: L("開始探索", "เริ่มสำรวจ", "Begin exploring"),
+      cinematicSkip: L("跳過開場", "ข้ามบทเปิด", "Skip intro"),
+      lowEnergy: L("體力偏低", "แรงน้อย", "Energy low"),
+      travelTo: L("前往", "ไปยัง", "Travel to")
+    },
+
+    /** 2D adventure scene layouts (illustrated; not historical photos). */
+    scenes: {
+      gate: {
+        width: 2400,
+        groundY: 78,
+        walkMin: 100,
+        walkMax: 2200,
+        spawnX: 280,
+        obstacles: [{ x1: 980, x2: 1180 }],
+        hotspots: [
+          { id: "gate_sign", x: 720, kind: "flavor", label: L("入口說明", "ป้ายทางเข้า", "Entrance sign") },
+          { id: "to_statue", x: 1950, kind: "travel", target: "statue", label: L("通往銅像", "ไปรูปปั้น", "To the statue") }
+        ],
+        palette: { sky: "#c9d6c4", far: "#8fa392", mid: "#6d8570", ground: "#cbb892", accent: "#a77a44" }
+      },
+      statue: {
+        width: 2200,
+        groundY: 78,
+        walkMin: 120,
+        walkMax: 2000,
+        spawnX: 260,
+        obstacles: [{ x1: 1040, x2: 1160 }],
+        hotspots: [
+          { id: "main", x: 980, kind: "event", eventId: "statue", label: L("青銅雕像", "รูปปั้นทองสัมฤทธิ์", "Bronze statue") }
+        ],
+        palette: { sky: "#d5dece", far: "#93a894", mid: "#738977", ground: "#d0bc93", accent: "#8b6914" }
+      },
+      cave: {
+        width: 2100,
+        groundY: 80,
+        walkMin: 140,
+        walkMax: 1900,
+        spawnX: 240,
+        obstacles: [{ x1: 860, x2: 1180 }],
+        hotspots: [
+          { id: "main", x: 1020, kind: "event", eventId: "cave", label: L("土洞（土牢）", "โพรงดิน", "Earth cave") }
+        ],
+        palette: { sky: "#b7c2b4", far: "#6f7f72", mid: "#55665a", ground: "#b5a588", accent: "#5c4a32" }
+      },
+      bomb: {
+        width: 2100,
+        groundY: 78,
+        walkMin: 120,
+        walkMax: 1900,
+        spawnX: 240,
+        obstacles: [{ x1: 900, x2: 1200 }],
+        hotspots: [
+          { id: "main", x: 1050, kind: "event", eventId: "bomb", label: L("炸彈殘骸", "ซากระเบิด", "Bomb remnant") }
+        ],
+        palette: { sky: "#cfd6c8", far: "#879687", mid: "#6a7a6c", ground: "#c4b08a", accent: "#7a5c38" }
+      },
+      hall: {
+        width: 2000,
+        groundY: 82,
+        walkMin: 160,
+        walkMax: 1800,
+        spawnX: 280,
+        obstacles: [{ x1: 720, x2: 980 }, { x1: 1200, x2: 1480 }],
+        hotspots: [
+          { id: "main", x: 1080, kind: "event", eventId: "hall", label: L("史料展示室", "ห้องเอกสาร", "Display room") }
+        ],
+        palette: { sky: "#e8e0d0", far: "#d2c4a8", mid: "#b9a888", ground: "#d9c9a8", accent: "#a77a44", indoor: true }
+      },
+      mural: {
+        width: 2200,
+        groundY: 78,
+        walkMin: 120,
+        walkMax: 2000,
+        spawnX: 260,
+        obstacles: [{ x1: 700, x2: 1600 }],
+        hotspots: [
+          { id: "main", x: 1150, kind: "event", eventId: "mural", label: L("牆壁上的壁畫", "ภาพจิตรกรรม", "Wall mural") }
+        ],
+        palette: { sky: "#d8e0d2", far: "#90a090", mid: "#6f8672", ground: "#cdb892", accent: "#31463a" }
+      }
     }
   };
 })();
+
